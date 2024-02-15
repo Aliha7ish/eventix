@@ -1,0 +1,29 @@
+.word-special-gradient {
+  font-weight: $word-special-weigth;
+  background-color: $color-word-special;
+  background-image: $gradient-font-main;
+  background-size: 100%;
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+
+.form__header {
+  font-size: 2rem;
+  font-weight: 200;
+
+  & .word-special-gradient {
+    font-size: 6vw;
+    display: block;
+  }
+}
+.form__heading-2 {
+  font-size: 3.6vw;
+  margin-bottom: 2rem;
+  text-transform: capitalize;
+}
+
+.col-side-content {
+  font-size: 1.8rem;
+}

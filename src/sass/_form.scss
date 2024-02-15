@@ -1,0 +1,139 @@
+.form__header {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.form__grid {
+  min-height: 100vh;
+  & .form-row {
+    min-height: 100vh;
+  }
+  & .col-side-content {
+    background: radial-gradient(
+        65% 60% at 64% 46%,
+        rgb(16 4 18 / 89%) 69%,
+        rgb(11, 1, 14) 111%
+      ),
+      url(src/images/form-background.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 6rem 4rem;
+
+    & .btn-nav-form {
+      align-self: center;
+      margin-top: 3rem;
+    }
+  }
+  & .col-side-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 6rem 5.5rem;
+    gap: 4rem;
+
+    & .form__signup {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+      padding: 0 4vw;
+
+      & .container-fluid {
+        display: flex;
+        flex-direction: column;
+        gap: 2.5rem;
+      }
+    }
+
+    & .form__login {
+      & .row:first-child {
+        display: flex;
+        gap: 2.5rem;
+      }
+    }
+  }
+}
+
+input.form-control {
+  background-color: transparent;
+  border: 0.5px solid $color-border-visited;
+  border-radius: 10px;
+  height: 35px;
+  font-size: 16px;
+  color: #fff;
+
+  padding: 0.35rem 2rem 0.35rem 0.75rem;
+  &:focus {
+    border-color: $color-border-active;
+    color: #fff;
+    background-color: transparent;
+  }
+}
+
+.form-control.input-invalid {
+  border-color: red;
+}
+.form-control.input-valid {
+  border-color: green;
+}
+
+label {
+  font-size: 12px;
+  margin-bottom: 4px;
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+.form__signup p:first-child,
+.form__login p:first-child {
+  font-size: 2.8rem;
+  color: $text-color-white-grey;
+  text-transform: capitalize;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
+}
+
+//Password icon
+.password-container {
+  position: relative;
+}
+
+.show-password-btn {
+  background-color: transparent;
+  border: none;
+  width: 2.2rem;
+  height: 2.2rem;
+
+  position: absolute;
+  top: 0;
+  right: $pass-icon-position;
+  transform: translateY(105%);
+  transition: all 0.4s;
+
+  & .password-icon {
+    width: 100%;
+    height: 100%;
+    fill: $color-border-visited;
+    transition: all 0.4s;
+  }
+  &:hover,
+  &:active {
+    & .password-icon {
+      fill: $color-border-active;
+    }
+  }
+}
+
+.form-control#password,
+.form-control#passwordConfirmation {
+  padding-right: calc(#{$pass-icon-position} * 2.5);
+}

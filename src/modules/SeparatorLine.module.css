@@ -1,0 +1,38 @@
+:root {
+  --color-gradient-line-rigth: linear-gradient(
+    90deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 85.94%
+  );
+  --color-gradient-line-left: linear-gradient(
+    190deg,
+    #ffffff 0%,
+    rgba(255, 255, 255, 0) 85.94%
+  );
+  --text-color: rgba(233, 99, 255, 1);
+}
+.line {
+  margin: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  font-size: 1.8rem;
+  color: var(--text-color);
+  text-transform: capitalize;
+}
+.line::after,
+.line::before {
+  content: "";
+  display: block;
+  height: 1px;
+
+  width: 50%;
+  /* background: ; */
+}
+.line::after {
+  background: var(--color-gradient-line-rigth);
+}
+.line::before {
+  background: var(--color-gradient-line-left);
+}
