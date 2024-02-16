@@ -4,6 +4,7 @@ import BodyGradientBackground from "./components/BodyGradientBackground";
 import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
 import CreateUserPage from "./components/CreateUserPage";
 import LoginPage from "./components/LoginPage";
+import AccountRecovery from "./components/AccountRecovery";
 
 export const specialCharacters = /[0-9!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]+/;
 export const passwordValidationRegex =
@@ -18,12 +19,14 @@ function App() {
           <Route path="login" element={<LoginPage />} />
           <Route path="/" element={<HomePage />} />
           <Route index element={<HomePage />} />
+          <Route path="account-recovery-center" element={<AccountRecovery />} />
         </Routes>
       </BrowserRouter>
       <BodyGradientBackground width={25} />
     </>
   );
 }
+
 function HomePage() {
   return (
     <section className="home">

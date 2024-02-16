@@ -20,11 +20,22 @@
       url(src/images/form-background.png);
     background-size: cover;
     background-repeat: no-repeat;
+    background-position: 50% 22%;
 
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 6rem 4rem;
+
+    // Above 1250px
+    @media screen and (max-width: 78.125em) {
+      padding: 5rem 2rem;
+    }
+
+    // Below 950px
+    @media screen and (max-width: 59.375em) {
+      padding: 5rem 2rem;
+    }
 
     & .btn-nav-form {
       align-self: center;
@@ -35,14 +46,20 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 6rem 5.5rem;
+    padding: 4rem 3.5rem;
     gap: 4rem;
 
-    & .form__signup {
+    // Below 950px
+    @media screen and (max-width: 59.375em) {
+      padding: 3rem 1.5rem;
+    }
+
+    & .form__signup,
+    & .form__login {
       display: flex;
       flex-direction: column;
       gap: 2.5rem;
-      padding: 0 4vw;
+      padding: 0 1.5vw;
 
       & .container-fluid {
         display: flex;
@@ -52,8 +69,9 @@
     }
 
     & .form__login {
-      & .row:first-child {
+      & .container-fluid {
         display: flex;
+        flex-direction: column;
         gap: 2.5rem;
       }
     }
@@ -110,13 +128,13 @@ label {
 .show-password-btn {
   background-color: transparent;
   border: none;
-  width: 2.2rem;
-  height: 2.2rem;
+  width: 22px;
+  height: 22px;
 
   position: absolute;
   top: 0;
   right: $pass-icon-position;
-  transform: translateY(105%);
+  transform: translateY(26px);
   transition: all 0.4s;
 
   & .password-icon {

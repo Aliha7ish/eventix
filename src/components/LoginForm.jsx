@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 
 import SeparatorLine from "./SeparatorLine";
 import SingleSignonButtons from "./SingleSignonButtons";
-
+import { Link } from "react-router-dom";
 import PasswordField from "./PasswordField";
 function LoginForm() {
   const validate = (values) => {
@@ -36,10 +36,14 @@ function LoginForm() {
   });
   return (
     <form onSubmit={formik.handleSubmit} className="form__login">
-      <p>log in</p>
       <div className="container-fluid">
         <div className="row justify-content-center">
-          <div className="input-label-container col-8">
+          <div className="col-12">
+            <p>log in</p>
+          </div>
+        </div>
+        <div className="row">
+          <div className="input-label-container col-12">
             <label htmlFor="email">Email Address</label>
             <input
               id="email"
@@ -54,28 +58,37 @@ function LoginForm() {
               <InvalidInput>{formik.errors.email}</InvalidInput>
             ) : null} */}
           </div>
+        </div>
+        <div className="row">
           <PasswordField
             id="password"
             label="password"
             value={formik.values.password}
             handleChange={formik.handleChange}
             handleBlur={formik.handleBlur}
-            col="8"
+            col="12"
           />
-
-          <div className="col-12">
-            <button
-              className="btn btn-gradient"
-              style={{ margin: "0 auto" }}
-              type="submit"
-            >
-              log in
-            </button>
-          </div>
-
-          <SeparatorLine />
-          <SingleSignonButtons />
+          <Link
+            to="/account-recovery-center"
+            className="btn btn-link"
+            style={{ marginTop: "6px" }}
+          >
+            forget password
+          </Link>
         </div>
+
+        <div className="col-12">
+          <button
+            className="btn btn-gradient"
+            style={{ margin: "0 auto" }}
+            type="submit"
+          >
+            log in
+          </button>
+        </div>
+
+        <SeparatorLine />
+        <SingleSignonButtons />
       </div>
     </form>
   );

@@ -18,10 +18,11 @@ $color-dark: rgba(27, 25, 27, 1);
 $font-primary: Poppins, sans-serif;
 $word-special-weigth: 700;
 $font-weigth-primary: 300;
-$pass-icon-position: 5%;
+$pass-icon-position: 7%;
 
 @import "./sass/typography";
 @import "./sass/custom";
 @import "./sass/base";
 @import "./sass/form";
 @import "./sass/btsrbCustom";
+@import "./sass/buttons";

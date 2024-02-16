@@ -63,8 +63,8 @@ function SignupForm({ isError }) {
   });
   return (
     <form onSubmit={formik.handleSubmit} className="form__signup">
-      <p>Create account</p>
       <div className="container-fluid ">
+        <p>Create account</p>
         <div className="row gy-3 justify-content-start">
           <div className="input-label-container col-12 col-sm-6">
             <label htmlFor="firstName">first name</label>

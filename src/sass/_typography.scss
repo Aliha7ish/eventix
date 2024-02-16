@@ -13,17 +13,64 @@
   font-size: 2rem;
   font-weight: 200;
 
+  // Below 950px
+  @media screen and (max-width: 59.375em) {
+    font-size: 1.8rem;
+  }
+
   & .word-special-gradient {
     font-size: 6vw;
     display: block;
+
+    // Above 1250px
+    @media screen and (min-width: 78.125em) {
+      font-size: 5rem;
+    }
+
+    // Below 950px
+    @media screen and (max-width: 59.375em) {
+      font-size: 3.8rem;
+    }
   }
 }
 .form__heading-2 {
   font-size: 3.6vw;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
   text-transform: capitalize;
+  font-weight: 300;
+
+  // Above 1250px
+  @media screen and (min-width: 78.125em) {
+    font-size: 5rem;
+  }
+
+  // Below 950px
+  @media screen and (max-width: 59.375em) {
+    font-size: 3.4rem;
+  }
+
+  // Below 400px
+  @media screen and (max-width: 47.9375em) {
+    font-size: 3rem;
+  }
 }
 
 .col-side-content {
   font-size: 1.8rem;
+  font-weight: 200;
+
+  // Below 950px
+  @media screen and (max-width: 59.375em) {
+    font-size: 14px;
+  }
+
+  // Below 767px
+  @media screen and (max-width: 47.9375em) {
+    text-align: center;
+  }
+
+  // Below 400px
+  @media screen and (max-width: 47.9375em) {
+    font-size: 12px;
+  }
 }

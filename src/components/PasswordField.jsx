@@ -11,6 +11,7 @@ function PasswordField({
   label = "password",
   error = null,
   className = null,
+  btnCustomClass = null,
 }) {
   const [showPassword, setShowPassword] = useState(false);
   function handleShowPassword(el) {
@@ -18,7 +19,6 @@ function PasswordField({
       return setShowPassword((e) => !e);
     } else return;
   }
-  console.log(showPassword);
   return (
     <div className={`input-label-container password-container col-${col}`}>
       <label htmlFor={id}>{label}</label>
@@ -34,7 +34,7 @@ function PasswordField({
       {error}
       <button
         type="button"
-        className="show-password-btn"
+        className={`show-password-btn ${btnCustomClass}`}
         onClick={(e) => handleShowPassword(e.target)}
       >
         <svg className="password-icon">
