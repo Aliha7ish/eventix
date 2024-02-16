@@ -42,8 +42,13 @@ function SignupForm({ isError }) {
         "at least 1 lowercase letter, 1 uppercase letter, 1 symbol, 1 digit";
     }
 
-    if (values.passwordConfirmation !== values.password) {
+    if (
+      values.passwordConfirmation !== values.password &&
+      formik.touched.passwordConfirmation
+    ) {
       errors.passwordConfirmation = "passwords are not identical";
+    } else if (!values.passwordConfirmation) {
+      errors.passwordConfirmation = "confirm assigned password";
     }
 
     return errors;
@@ -58,7 +63,7 @@ function SignupForm({ isError }) {
     },
     validate,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      console.log(values);
     },
   });
   return (
@@ -165,7 +170,7 @@ function SignupForm({ isError }) {
             label="confirm password"
             value={formik.values.passwordConfirmation}
             handleChange={formik.handleChange}
-            handleBlur={formik.handleBlur}
+            // handleBlur={formik.handleBlur}
             className={
               formik.errors.passwordConfirmation
                 ? "input-invalid"

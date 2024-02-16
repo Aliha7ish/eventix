@@ -13,7 +13,7 @@ export const passwordValidationRegex =
 function App() {
   return (
     <>
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
+      <BrowserRouter>
         <Routes>
           <Route path="create-account" element={<CreateUserPage />} />
           <Route path="login" element={<LoginPage />} />

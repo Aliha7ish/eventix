@@ -6,7 +6,7 @@ function PasswordField({
   id,
   value,
   handleChange,
-  handleBlur,
+  handleBlur = null,
   col,
   label = "password",
   error = null,

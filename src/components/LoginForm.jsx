@@ -31,7 +31,7 @@ function LoginForm() {
     },
     validate,
     onSubmit: (values) => {
-      alert(JSON.stringify(values, null, 2));
+      console.log(values);
     },
   });
   return (
