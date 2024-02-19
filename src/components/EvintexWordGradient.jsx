@@ -1,4 +1,5 @@
-function EventixWordGradient() {
-  return <span className={`word-special-gradient`}>EVENTIX</span>;
+/* eslint-disable react/prop-types */
+function EventixWordGradient({ className = "" }) {
+  return <span className={`word-special-gradient ${className}`}>EVENTIX</span>;
 }
 export default EventixWordGradient;

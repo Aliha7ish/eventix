@@ -47,20 +47,7 @@ body {
 }
 
 //body background Gradient
-.shape-gradient {
-  position: absolute;
-  top: 0;
-  right: 5%;
-  border-radius: 24% 67% 60% 47% / 30% 30% 70% 70%;
-  background: radial-gradient(
-    65.43% 77.43% at 43% 45%,
-    rgba(233, 99, 255, 18%) 14.23%,
-    rgba(91, 30, 155, 18%) 72.31%
-  );
-  filter: opacity(0.55) blur(25px) brightness(0.85);
 
-  z-index: -20;
-}
 //Reseting input field when it's auto completed
 input:-webkit-autofill,
 input:-webkit-autofill:hover,

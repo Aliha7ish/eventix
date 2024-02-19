@@ -6,6 +6,8 @@ $main-body-gradient-color: linear-gradient(
   #e963ff 14.23%,
   #5b1e9b 87.31%
 );
+$color-overlapping-text: rgba(0, 224, 255, 1);
+
 $color-word-special: rgb(57, 55, 58);
 $btn-color-border: rgba(255, 255, 255, 1);
 $color-border-visited: rgba(51, 51, 51, 1);
@@ -26,3 +28,4 @@ $pass-icon-position: 7%;
 @import "./sass/form";
 @import "./sass/btsrbCustom";
 @import "./sass/buttons";
+@import "./sass/mainPage";
