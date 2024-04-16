@@ -1,6 +1,8 @@
 $gradient-font-main: linear-gradient(90deg, #5b1e9b 0%, #e963ff 65.64%);
 $gradient-bg: linear-gradient(90deg, #e963ff 0%, #5b1e9b 100%);
-$main-body-bg-color: rgba(25, 25, 25, 0.96);
+$gradient-aqua-violet: linear-gradient(90deg, #00e0ff 0%, #5b1e9b 100%);
+
+$main-body-bg-color: #0a0a0a;
 $main-body-gradient-color: linear-gradient(
   246.99deg,
   #e963ff 14.23%,
@@ -16,11 +18,13 @@ $border-gradient: linear-gradient(0deg, #1b191b, #1b191b) padding-box,
   linear-gradient(180deg, #e963ff 0%, #5b1e9b 100%) border-box;
 $text-color-primary: rgba(255, 255, 255, 1);
 $text-color-white-grey: rgba(214, 214, 214, 1);
+$text-color-grey-primary: rgba(154, 154, 154, 1);
 $color-dark: rgba(27, 25, 27, 1);
 $font-primary: Poppins, sans-serif;
 $word-special-weigth: 700;
 $font-weigth-primary: 300;
 $pass-icon-position: 7%;
+$images-border-radius: 20px;
 
 @import "./sass/typography";
 @import "./sass/custom";

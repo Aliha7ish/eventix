@@ -9,6 +9,5 @@
     rgba(91, 30, 155, 18%) 72.31%
   );
   filter: opacity(0.55) blur(25px) brightness(0.85);
-
   z-index: -20;
 }

@@ -15,3 +15,17 @@
   margin-left: auto;
   transform: translateY(4px);
 }
+
+/* Below 950px ---> BreakPoint / 16 */
+@media screen and (max-width: 59.375em) {
+  .overlap-word {
+    font-size: 1.4rem;
+  }
+}
+
+/* Below 576px ---> BreakPoint / 16 */
+@media screen and (max-width: 36em) {
+  .overlap-word {
+    font-size: 1.1rem;
+  }
+}

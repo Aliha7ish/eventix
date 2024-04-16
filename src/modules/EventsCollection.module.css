@@ -1,0 +1,15 @@
+.collectionName {
+  font-size: 1.8rem;
+  text-transform: capitalize;
+  margin-bottom: 2rem;
+  color: #fff;
+}
+
+ul {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, 37rem);
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}

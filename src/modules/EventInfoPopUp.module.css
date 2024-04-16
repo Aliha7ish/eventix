@@ -1,0 +1,25 @@
+.popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(17, 17, 17, 0.4);
+  z-index: 2500;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s;
+}
+.popupContent {
+  box-shadow: 0 1.5rem 2rem rgba(0, 0, 0, 0.2);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 75%;
+  display: grid;
+  border-radius: 3px;
+  overflow: hidden;
+  background-color: rgba(17, 17, 17, 1);
+}

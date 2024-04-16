@@ -1,0 +1,13 @@
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.8rem 4rem;
+  font-size: 3.2rem;
+}
+h2 {
+  font-weight: 100;
+}
+.eventixWord {
+  font-size: 3.2rem;
+}

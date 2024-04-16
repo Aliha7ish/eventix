@@ -1,3 +1,26 @@
+// @use "sass:color";
+// @use "sass:list";
+// @use "sass:math";
+
+// $count: 15;
+// $colors: (red, orange, yellow, green, blue, indigo);
+// $opacity: 0.2;
+
+// $circles: ();
+
+// @for $i from 1 through $count {
+//   $x: math.random(100) * 1vw;
+//   $y: math.random(100) * 1vh;
+//   $r: math.random(15) + 5vmin;
+//   $color: list.nth($colors, math.random(list.length($colors)));
+//   $grad: radial-gradient(
+//     circle at $x $y,
+//     color.change($color, $alpha: $opacity) $r,
+//     transparent calc(#{$r} + 2px)
+//   );
+//   $circles: append($circles, $grad, "comma");
+// }
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -46,7 +69,9 @@ body {
   position: relative;
 }
 
-//body background Gradient
+a {
+  text-decoration: none;
+}
 
 //Reseting input field when it's auto completed
 input:-webkit-autofill,

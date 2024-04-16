@@ -1,11 +1,16 @@
+/* eslint-disable no-empty */
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
 import "./App.scss";
 import BodyGradientBackground from "./components/BodyGradientBackground";
-import { BrowserRouter, Link, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
 import CreateUserPage from "./components/CreateUserPage";
 import LoginPage from "./components/LoginPage";
 import AccountRecovery from "./components/AccountRecovery";
-import About from "./components/About";
+import About from "./pages/About";
+import Home from "./pages/Home";
+import Browse from "./pages/Browse";
+import { EventsProvider } from "./contextAPI/EventsProvider";
 
 export const specialCharacters = /[0-9!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]+/;
 export const passwordValidationRegex =
@@ -20,6 +25,7 @@ function App() {
           <Route path="login" element={<LoginPage />} />
           <Route path="/" element={<MainPage />} />
           <Route index element={<MainPage />} />
+          <Route path="events/:id" element={<Browse />} />
           <Route path="account-recovery-center" element={<AccountRecovery />} />
         </Routes>
       </BrowserRouter>
@@ -33,10 +39,11 @@ function MainPage() {
     <div className="main-page">
       <div></div>
       <div>
-        <Link to="create-account">
-          <button className="btn btn-primary">Navigate</button>
-        </Link>
-        <About />
+        {/* <Home />
+        <About /> */}
+        <EventsProvider>
+          <Browse />
+        </EventsProvider>
       </div>
       <div></div>
     </div>
