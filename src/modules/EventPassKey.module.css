@@ -1,0 +1,11 @@
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+.label {
+  font-size: 1.4rem;
+  font-weight: 200;
+}
+.input {
+}

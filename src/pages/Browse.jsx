@@ -4,7 +4,7 @@ import EventsCollection from "../components/EventsCollection";
 import EventixWordGradient from "../components/EvintexWordGradient";
 import { useEvent } from "../contextAPI/EventsProvider";
 import styles from "../modules/Browse.module.css";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 
 function Browse() {
   const { trending } = useEvent();
@@ -20,6 +20,7 @@ function Browse() {
         </div>
       </header>
       <EventsCollection collection={trending} collectionName="trending" />
+      <Outlet />
     </section>
   );
 }

@@ -1,4 +1,4 @@
-import ButtonNavToForm from "./ButtonNavToForm";
+import ButtonComp from "./ButtonComp";
 import FormFillOut from "./FormFillOut";
 import FormHeader from "./FormHeader";
 import FormSection from "./FormSection";
@@ -17,7 +17,9 @@ function CreateUserPage() {
           Excited to have you return! Let’s shape unforgettable events together.
         </p>
 
-        <ButtonNavToForm link="login">log in</ButtonNavToForm>
+        <ButtonComp link="login" className="btn-transparent btn-nav-form">
+          login
+        </ButtonComp>
       </FormSideContent>
 
       <FormFillOut>

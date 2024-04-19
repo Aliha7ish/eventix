@@ -29,7 +29,6 @@ function reducer(state, action) {
 function EventsProvider({ children }) {
   const [state, dispatch] = useReducer(reducer, initialState);
   const { trending, currentEvent } = state;
-
   useEffect(function () {
     async function trendingAPI() {
       try {

@@ -37,7 +37,7 @@ export default function Home() {
         <Link to="events">
           <button className={`${style.btn} ${style.btn1}`}>Get started</button>
         </Link>
-        <Link path="about">
+        <Link to="about">
           <button className={`${style.btn} ${style.btn2}`}>Learn more</button>
         </Link>
 

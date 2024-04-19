@@ -2,8 +2,8 @@ import FormHeader from "./FormHeader";
 import FormSection from "./FormSection";
 import FormSideContent from "./FormSideContent";
 import LoginForm from "./LoginForm";
-import ButtonNavToForm from "./ButtonNavToForm";
 import FormFillOut from "./FormFillOut";
+import ButtonComp from "./ButtonComp";
 
 function LoginPage() {
   return (
@@ -14,7 +14,12 @@ function LoginPage() {
           Embark on your adventure with Evintix by entering your details let the
           magic begin!
         </p>
-        <ButtonNavToForm link="create-account">sign up</ButtonNavToForm>
+        <ButtonComp
+          link="create-account"
+          className="btn-transparent btn-nav-form"
+        >
+          sign up
+        </ButtonComp>
       </FormSideContent>
 
       <FormFillOut>

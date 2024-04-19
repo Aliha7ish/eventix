@@ -5,32 +5,27 @@ import { useEffect } from "react";
 import { useEvent } from "../contextAPI/EventsProvider";
 import styles from "../modules/EventItem.module.css";
 import VirtualBadge from "./VirtualBadge";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 
 function EventItem({ event }) {
-  const { id } = useParams();
-  const { getEvent } = useEvent();
-  useEffect(
-    function () {
-      getEvent(id);
-    },
-    [id]
-  );
+  // const { getEvent } = useEvent();
   return (
-    <li>
-      {event?.isVirtual ? <VirtualBadge /> : null}
-      <div className={styles.imgContainer}>
-        <img src={event.image} />
-      </div>
-      <div className={styles.eventOrgContainer}>
-        <p className={styles.eventName}>{event.eventName}</p>
-        <p className={styles.organizer}>{event.organizer}</p>
-      </div>
-      <div className={styles.eventDateContainer}>
-        <p>{event.date}</p>
-        <p>{event.time}</p>
-      </div>
-    </li>
+    <Link to={`/events/${event.id}`}>
+      <li>
+        {event?.isVirtual ? <VirtualBadge /> : null}
+        <div className={styles.imgContainer}>
+          <img src={event.image}></img>
+        </div>
+        <div className={styles.eventOrgContainer}>
+          <p className={styles.eventName}>{event.eventName}</p>
+          <p className={styles.organizer}>{event.organizer}</p>
+        </div>
+        <div className={styles.eventDateContainer}>
+          <p>{event.date}</p>
+          <p>{event.time}</p>
+        </div>
+      </li>
+    </Link>
   );
 }
 
