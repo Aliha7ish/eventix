@@ -1,26 +1,3 @@
-// @use "sass:color";
-// @use "sass:list";
-// @use "sass:math";
-
-// $count: 15;
-// $colors: (red, orange, yellow, green, blue, indigo);
-// $opacity: 0.2;
-
-// $circles: ();
-
-// @for $i from 1 through $count {
-//   $x: math.random(100) * 1vw;
-//   $y: math.random(100) * 1vh;
-//   $r: math.random(15) + 5vmin;
-//   $color: list.nth($colors, math.random(list.length($colors)));
-//   $grad: radial-gradient(
-//     circle at $x $y,
-//     color.change($color, $alpha: $opacity) $r,
-//     transparent calc(#{$r} + 2px)
-//   );
-//   $circles: append($circles, $grad, "comma");
-// }
-
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -58,6 +35,9 @@ body {
   -webkit-hyphens: auto;
 }
 
+$circle-size: 100px;
+$distance: 20px;
+
 body {
   max-width: 100vw;
   overflow-x: hidden;
@@ -67,6 +47,49 @@ body {
   background: $main-body-bg-color;
   font-weight: $font-weigth-primary;
   position: relative;
+  overflow-x: hidden;
+
+  &::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 60px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    background: $main-body-gradient-color;
+    filter: blur(150px);
+    background-size: 100% 100%;
+    transform: translate(-50%, -50%);
+    z-index: -20;
+  }
+
+  @for $i from 1 through ceil(100 / ($circle-size + $distance)) {
+    &::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: $circle-size * 2 * $i;
+      height: $circle-size * 2 * $i;
+      border-radius: 50%;
+      background: $main-body-gradient-color;
+      filter: blur(150px);
+      background-size: 100% 100%;
+      transform: translate(-50%, -50%)
+        translateX(($circle-size + $distance) * $i);
+      mix-blend-mode: screen;
+      z-index: -20;
+    }
+  }
+  @media (max-width: 768px) {
+    $circle-size: 50px; // Adjust size for smaller screens
+  }
+
+  @media (max-width: 480px) {
+    $circle-size: 25px; // Further adjust size for even smaller screens
+    $distance: 5px; // Further adjust distance for even smaller screens
+  }
 }
 
 a {

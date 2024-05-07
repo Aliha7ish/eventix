@@ -18,7 +18,7 @@ function LoginPage() {
           link="create-account"
           className="btn-transparent btn-nav-form"
         >
-          sign up
+          Sign Up
         </ButtonComp>
       </FormSideContent>
 

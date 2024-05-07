@@ -1,6 +1,6 @@
 .main-page {
   display: grid;
-  grid-template-columns: 0.2fr 4.5fr 0.2fr;
+  grid-template-columns: 0.4fr 4.5fr 0.2fr;
 
   /* Below 710px ---> BreakPoint / 16 */
   @media screen and (max-width: 44.375em) {

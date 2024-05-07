@@ -17,7 +17,9 @@ $color-border-active: rgba(149, 149, 149, 1);
 $border-gradient: linear-gradient(0deg, #1b191b, #1b191b) padding-box,
   linear-gradient(180deg, #e963ff 0%, #5b1e9b 100%) border-box;
 $text-color-primary: rgba(255, 255, 255, 1);
+$color-white-2: rgba(241, 241, 241, 1);
 $text-color-white-grey: rgba(214, 214, 214, 1);
+$text-color-white-grey-2: rgba(217, 217, 217, 1);
 $text-color-grey-primary: rgba(154, 154, 154, 1);
 $color-dark: rgba(27, 25, 27, 1);
 $font-primary: Poppins, sans-serif;
@@ -25,6 +27,8 @@ $word-special-weigth: 700;
 $font-weigth-primary: 300;
 $pass-icon-position: 7%;
 $images-border-radius: 20px;
+$font-avenir: "avenir_lt_std45_book";
+$font-inter: "Inter", sans-serif;
 
 @import "./sass/typography";
 @import "./sass/custom";
@@ -33,3 +37,4 @@ $images-border-radius: 20px;
 @import "./sass/btsrbCustom";
 @import "./sass/buttons";
 @import "./sass/mainPage";
+@import "./sass/navigations";

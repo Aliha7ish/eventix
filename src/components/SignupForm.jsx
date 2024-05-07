@@ -201,7 +201,7 @@ function SignupForm({ isError }) {
           style={{ margin: "0 auto" }}
           type="submit"
         >
-          Sign up
+          Sign Up
         </button>
         <SeparatorLine />
         <SingleSignonButtons />

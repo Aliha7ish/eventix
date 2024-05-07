@@ -49,35 +49,28 @@ img {
 
   gap: 1rem;
   margin-bottom: 2.5rem;
+  margin-top: 1.6rem;
 }
 .textContainer p {
   font-size: 16px;
   font-weight: 100;
 }
-h2 {
+.textContainer h2 {
   font-size: 3.6rem;
 }
-h2::first-letter {
+.textContainer h2::first-letter {
   text-transform: uppercase;
 }
 
 .buttons {
   display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-
-  gap: 3rem;
+  justify-content: center;
   margin-top: 3.5rem;
 }
-.btn-link {
-  padding: 0;
-}
-.buttons button:last-child {
-  margin-left: auto;
-}
-.showPasswordBtn {
+
+.container .showPasswordBtn {
   right: 3%;
-  transform: translateY(18px);
+  transform: translateY(25px);
 }
 
 /* Responsive website */
@@ -93,9 +86,9 @@ h2::first-letter {
 }
 
 /* Above 775px */
-@media screen and (min-width: 48.4375em) {
-  .showPasswordBtn {
-    transform: translateY(20px);
+@media screen and (max-width: 48.4375em) {
+  .showPasswordBtn.show-password-btn {
+    transform: translateY(23px);
   }
 }
 /* Below 645px */
@@ -105,6 +98,12 @@ h2::first-letter {
       7.5rem
       22rem
       7.5rem;
+  }
+}
+
+@media screen and (max-width: 28.125em) {
+  .container .showPasswordBtn {
+    transform: translateY(22px);
   }
 }
 
@@ -122,12 +121,15 @@ h2::first-letter {
   .textContainer p {
     font-size: 14px;
   }
+  .showPasswordBtn.show-password-btn {
+    transform: translateY(20px);
+  }
 }
 
 /* Below 350px */
 @media screen and (max-width: 21.875em) {
-  .showPasswordBtn {
-    transform: translateY(15px);
+  .showPasswordBtn.show-password-btn {
+    transform: translateY(20px);
   }
 }
 

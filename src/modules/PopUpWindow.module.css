@@ -1,0 +1,39 @@
+.popup {
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(17, 17, 17, 0.4);
+  backdrop-filter: blur(15px);
+  z-index: 2500;
+  transition: all 0.3s;
+}
+.popupContent {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  width: 75%;
+  display: grid;
+  grid-template-columns: 1.5fr 3fr;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: rgba(17, 17, 17, 1);
+}
+
+/* Booking tickets */
+
+.popupContent form {
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 2.5rem 4rem;
+  row-gap: 4.5rem;
+}
+.popupContent form article {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+}

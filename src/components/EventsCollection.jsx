@@ -7,7 +7,7 @@ import styles from "../modules/EventsCollection.module.css";
 
 function EventsCollection({ collection, collectionName }) {
   return (
-    <article className="container-fluid">
+    <article className={`container-fluid ${styles.container}`}>
       <p className={styles.collectionName}>{collectionName}</p>
       <ul>
         {collection.map((event) => {

@@ -1,0 +1,57 @@
+.nav-pages ul {
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+  position: relative;
+  padding: 0 3rem;
+  border-image-source: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 1.53%,
+    #ffffff 51.06%,
+    rgba(255, 255, 255, 0) 98.04%
+  );
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 1.53%,
+      #ffffff 51.06%,
+      rgba(255, 255, 255, 0) 98.04%
+    );
+    top: 0;
+    left: 0;
+  }
+}
+.nav-pages a {
+  color: $text-color-primary;
+  font-size: 1.8rem;
+  font-weight: 200;
+
+  &.active {
+    font-weight: 400;
+    .nav-item::marker {
+      color: $text-color-primary;
+    }
+  }
+}
+
+.nav-pages a:first-of-type.active {
+  & ~ a:last-of-type {
+    opacity: 0.6;
+  }
+}
+
+.nav-pages a:last-of-type.pending,
+.nav-pages a:first-of-type.pending {
+  opacity: 0.6;
+}
+
+.nav-item::marker {
+  font-size: 2rem;
+  color: $text-color-white-grey-2;
+}

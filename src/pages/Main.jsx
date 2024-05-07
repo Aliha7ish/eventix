@@ -3,10 +3,13 @@
 /* eslint-disable react/prop-types */
 
 import { Outlet } from "react-router-dom";
+import NavigationPages from "../components/NavigationPages";
 function Main() {
   return (
     <div className="main-page">
-      <div></div>
+      <div>
+        <NavigationPages />
+      </div>
       <div>
         <Outlet />
       </div>

@@ -34,13 +34,16 @@
   }
 }
 .form__heading-2 {
-  font-size: 3.6vw;
-  margin-bottom: 0.5rem;
-  text-transform: capitalize;
-  font-weight: 300;
+  font-size: 3.8vw;
+  margin-bottom: 0.8rem;
+  font-weight: 400;
+
+  &::first-letter {
+    text-transform: uppercase;
+  }
 
   // Above 1250px
-  @media screen and (min-width: 78.125em) {
+  @media screen and (max-width: 78.125em) {
     font-size: 5rem;
   }
 
@@ -57,7 +60,8 @@
 
 .col-side-content {
   font-size: 1.8rem;
-  font-weight: 200;
+  font-weight: 300;
+  font-family: $font-inter;
 
   // Below 950px
   @media screen and (max-width: 59.375em) {

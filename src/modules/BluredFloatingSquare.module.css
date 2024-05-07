@@ -1,19 +1,18 @@
 .square {
+  width: 10rem;
+  height: 10rem;
   position: absolute;
-  min-width: 10rem;
-  min-height: 10rem;
-  max-width: 15vw;
-  max-height: 15vw;
-  background-color: rgba(33, 33, 33, 0.2);
+  top: 10rem;
+  left: 25rem;
+  border-radius: 10px;
+  border: 1px;
+  z-index: 1;
   background: linear-gradient(
       0deg,
       rgba(33, 33, 33, 0.2),
       rgba(33, 33, 33, 0.2)
     ),
     linear-gradient(68.95deg, #999999 0.53%, rgba(153, 153, 153, 0) 61.67%);
-
-  border-radius: 15px;
-  position: absolute;
   border: 1px solid;
   border-image-source: linear-gradient(
     68.95deg,

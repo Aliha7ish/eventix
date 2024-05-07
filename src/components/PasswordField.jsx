@@ -12,6 +12,7 @@ function PasswordField({
   error = null,
   className = null,
   btnCustomClass = null,
+  resCol = col,
 }) {
   const [showPassword, setShowPassword] = useState(false);
   function handleShowPassword(el) {
@@ -20,7 +21,9 @@ function PasswordField({
     } else return;
   }
   return (
-    <div className={`input-label-container password-container col-${col}`}>
+    <div
+      className={`input-label-container password-container col-${col} col-${resCol}`}
+    >
       <label htmlFor={id}>{label}</label>
       <input
         id={id}

@@ -39,11 +39,11 @@ function LoginForm() {
       <div className="container-fluid">
         <div className="row justify-content-center">
           <div className="col-12">
-            <p>log in</p>
+            <p>logIn</p>
           </div>
         </div>
         <div className="row">
-          <div className="input-label-container col-12">
+          <div className="input-label-container col-sm-8 col-12">
             <label htmlFor="email">Email Address</label>
             <input
               id="email"
@@ -67,14 +67,17 @@ function LoginForm() {
             handleChange={formik.handleChange}
             handleBlur={formik.handleBlur}
             col="12"
+            resCol="sm-8"
           />
-          <Link
-            to="/account-recovery-center"
-            className="btn btn-link"
-            style={{ marginTop: "6px" }}
-          >
-            forget password
-          </Link>
+          <div className="col-12  col-sm-8">
+            <Link
+              to="/account-recovery-center"
+              className="btn btn-link"
+              style={{ marginTop: "5px" }}
+            >
+              forget password?
+            </Link>
+          </div>
         </div>
 
         <div className="col-12">
@@ -83,7 +86,7 @@ function LoginForm() {
             style={{ margin: "0 auto" }}
             type="submit"
           >
-            log in
+            Log In
           </button>
         </div>
 

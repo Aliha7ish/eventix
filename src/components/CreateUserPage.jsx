@@ -18,7 +18,7 @@ function CreateUserPage() {
         </p>
 
         <ButtonComp link="login" className="btn-transparent btn-nav-form">
-          login
+          logIn
         </ButtonComp>
       </FormSideContent>
 

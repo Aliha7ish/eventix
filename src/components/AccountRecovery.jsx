@@ -1,8 +1,8 @@
 /* eslint-disable react/prop-types */
-import { Link } from "react-router-dom";
 import styles from "../modules/AccountRecovery.module.css";
 import PasswordField from "./PasswordField";
 import { useFormik } from "formik";
+import ButtonComp from "./ButtonComp";
 function AccountRecovery() {
   const validate = (values) => {
     const errors = {};
@@ -37,10 +37,8 @@ function AccountRecovery() {
         </div>
 
         <div className={`${styles.textContainer}`}>
-          <h2>account recovery</h2>
-          <p>
-            Enter the last password you remember using with this Eventix account
-          </p>
+          <h2>password recovery</h2>
+          <p>Enter your email or phone number</p>
         </div>
         <PasswordField
           id="passwordRet"
@@ -52,10 +50,7 @@ function AccountRecovery() {
           btnCustomClass={styles.showPasswordBtn}
         />
         <div className={styles.buttons}>
-          <Link to="/account-recovery-center" className="btn btn-link">
-            try another way
-          </Link>
-          <button className="btn btn-gradient">continue</button>
+          <ButtonComp className="btn-gradient">continue</ButtonComp>
         </div>
       </div>
     </div>

@@ -5,13 +5,12 @@ import { useEffect } from "react";
 import { useEvent } from "../contextAPI/EventsProvider";
 import styles from "../modules/EventItem.module.css";
 import VirtualBadge from "./VirtualBadge";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function EventItem({ event }) {
-  // const { getEvent } = useEvent();
   return (
-    <Link to={`/events/${event.id}`}>
-      <li>
+    <Link to={`/events/event/${event.id}`}>
+      <li className={styles.item}>
         {event?.isVirtual ? <VirtualBadge /> : null}
         <div className={styles.imgContainer}>
           <img src={event.image}></img>

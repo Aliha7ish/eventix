@@ -1,4 +1,4 @@
-li {
+.item {
   height: 20rem;
   position: relative;
   overflow: hidden;
@@ -15,10 +15,10 @@ li {
   cursor: pointer;
   transition: border-color 0.3s;
 }
-li:hover {
+.item:hover {
   border-color: #fff;
 }
-li:hover .imgContainer {
+.item:hover .imgContainer {
   transform: scale(1.1);
 }
 img {

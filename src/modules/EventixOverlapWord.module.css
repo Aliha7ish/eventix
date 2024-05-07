@@ -2,18 +2,18 @@
   display: inline-block;
   width: fit-content;
   height: fit-content;
+  line-height: 1;
 }
 .overlap-word {
   text-transform: capitalize;
   display: flex;
   justify-content: end;
   color: rgba(0, 224, 255, 1);
-  font-size: 1.6rem;
+  font-size: 0.4em;
   font-style: italic;
   font-weight: 500;
-
+  letter-spacing: 0.8px;
   margin-left: auto;
-  transform: translateY(4px);
 }
 
 /* Below 950px ---> BreakPoint / 16 */

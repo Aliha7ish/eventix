@@ -4,6 +4,8 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+
+  padding: 0;
 }
 
 .form__grid {
@@ -25,7 +27,13 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 6rem 4rem;
+    padding: 6rem 5.5rem;
+
+    & p {
+      font-size: 2rem;
+      font-weight: 200;
+      color: #fff;
+    }
 
     // Above 1250px
     @media screen and (max-width: 78.125em) {
@@ -39,19 +47,19 @@
 
     & .btn-nav-form {
       align-self: center;
-      margin-top: 3rem;
+      margin-top: 4rem;
     }
   }
   & .col-side-form {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 4rem 3.5rem;
-    gap: 1rem;
+    padding: 1rem 5rem;
+    gap: 1.6rem;
 
     // Below 950px
     @media screen and (max-width: 59.375em) {
-      padding: 3rem 1.5rem;
+      padding: 2rem 3.5rem;
     }
 
     & .form__signup,
@@ -64,15 +72,16 @@
       & .container-fluid {
         display: flex;
         flex-direction: column;
-        gap: 2.5rem;
+        gap: 1.8rem;
       }
     }
 
     & .form__login {
       & .container-fluid {
-        display: flex;
-        flex-direction: column;
-        gap: 2.5rem;
+        & .row:nth-of-type(2),
+        & .row:nth-of-type(3) {
+          justify-content: center;
+        }
       }
     }
   }
@@ -81,8 +90,8 @@
 input.form-control {
   background-color: transparent;
   border: 0.5px solid $color-border-visited;
-  border-radius: 10px;
-  height: 35px;
+  border-radius: 8px;
+  height: 40px;
   font-size: 16px;
   color: #fff;
 
@@ -102,8 +111,10 @@ input.form-control {
 }
 
 label {
-  font-size: 12px;
-  margin-bottom: 4px;
+  font-size: 14px;
+  font-weight: 400;
+  color: $color-white-2;
+  margin-bottom: 3px;
   &::first-letter {
     text-transform: uppercase;
   }
@@ -134,7 +145,7 @@ label {
   position: absolute;
   top: 0;
   right: $pass-icon-position;
-  transform: translateY(26px);
+  transform: translateY(34px);
   transition: all 0.4s;
 
   & .password-icon {

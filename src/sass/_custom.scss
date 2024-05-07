@@ -1,4 +1,7 @@
 /* make the customizations */
+header {
+  padding: 0;
+}
 
 /* import bootstrap to set changes */
 @import "../../node_modules/bootstrap/scss/bootstrap";
