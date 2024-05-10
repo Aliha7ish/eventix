@@ -1,9 +1,8 @@
 .btn {
   // text-transform: capitalize;
-  border-radius: 50px;
-  padding: 0.8rem 2rem;
-  font-size: 1.8rem;
-  border-width: 0.5px;
+  border-radius: 45px;
+  font-size: clamp(18px, 2vw, 2rem);
+  border-width: 1px;
   border-style: solid;
   color: $text-color-primary;
 
@@ -16,10 +15,18 @@
   &::first-letter {
     text-transform: capitalize;
   }
+  &:hover,
+  &:active {
+    color: $text-color-primary;
+  }
 
-  // Below 400px
-  @media screen and (max-width: 47.9375em) {
-    padding: 1rem 3rem;
+  // Below 500px
+  @media screen and (max-width: 31.25em) {
+    font-size: clamp(16px, 1.4vw, 18px);
+  }
+  // Below 300px
+  @media screen and (max-width: 18.75em) {
+    font-size: clamp(16px, 1.2vw, 18px);
   }
 
   &:not(.btn-sso) {
@@ -34,6 +41,11 @@
     background-color: transparent;
     font-weight: 300;
     text-transform: capitalize;
+    padding: 18px 34px;
+
+    @media screen and (max-width: 47.9375em) {
+      padding: 12px 18px;
+    }
 
     &:hover,
     &:active {
@@ -44,12 +56,32 @@
   &-gradient {
     background: $gradient-bg;
     border: none;
+    padding: 18px 34px;
+
+    @media screen and (max-width: 47.9375em) {
+      padding: 12px 18px;
+    }
   }
   &-sso {
     background-color: $color-dark;
     background: $border-gradient;
-    width: 29rem;
+    width: 290px;
+    height: 66px;
     gap: 1rem;
+
+    @media screen and (max-width: 56.25em) {
+      width: 280px;
+      height: 50px;
+    }
+    @media screen and (max-width: 31.25em) {
+      width: 290px;
+      padding: 0 1.2rem;
+    }
+    // Below 300px
+    @media screen and (max-width: 18.75em) {
+      width: 250px;
+      padding: 0 0.6rem;
+    }
   }
   &-link {
     padding: 0;

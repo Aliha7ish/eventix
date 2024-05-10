@@ -1,5 +1,15 @@
+.row > * {
+  padding: 0;
+}
+
+.form {
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
 .formHeader {
-  grid-column: span 2;
+  font-size: 3.8rem;
+  margin-bottom: 2rem;
 }
 .personalInfoSide p:first-of-type,
 .billingInfoSide p:first-of-type {
@@ -13,20 +23,20 @@
   text-transform: uppercase;
 }
 
-.bookingInput {
-  width: 50%;
-}
-.bookingFormBtn {
-  grid-column: span 2;
-  justify-self: end;
+.billingInfoSide input {
+  /* width: 105px; */
 }
 .cardNoInputs {
   display: flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
 }
 .billingLastInputsContainer {
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+
+.btnContainer {
+  padding-top: 5rem;
 }

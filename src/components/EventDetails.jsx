@@ -23,37 +23,46 @@ function EventDetails() {
     currentEvent;
   return (
     <>
-      <div className={styles.imageSide}>
-        {isLive ? <LiveBadge /> : null}
-        <img src={image}></img>
-      </div>
-      <div className={styles.informationSide}>
-        <div className={styles.eventOrgContainer}>
-          <p className={styles.eventName}>{eventName}</p>
-          <p className={styles.organizer}>{organizer}</p>
-        </div>
-        <EventAttendeesComponent className={styles.attendContainer} />
-        <div className={styles.descriptionContainer}>
-          <h3>Description</h3>
-          <p>{description}</p>
-        </div>
-        <div className={styles.eventInfoHostCat}>
-          <div className={styles.hosts}>
-            <h3>Hosts</h3>
+      <div className="container-fluid">
+        <div className="row">
+          <div className={`${styles.imageSide} col-md-4 col-12`}>
+            {isLive ? <LiveBadge /> : null}
+            <img src={image}></img>
           </div>
-          <div className={styles.category}>
-            <h3>Category</h3>
-            <svg className={styles.categoryIcon}>
-              <use xlinkHref={`${sprite}#${category}`} />
-            </svg>
+          <div
+            className={`${styles.informationSide} col-md-8 col-12 px-md-5 px-3`}
+          >
+            <div className={styles.eventOrgContainer}>
+              <p className={styles.eventName}>{eventName}</p>
+              <p className={styles.organizer}>{organizer}</p>
+            </div>
+            <EventAttendeesComponent className={styles.attendContainer} />
+            <div className={styles.descriptionContainer}>
+              <h3>Description</h3>
+              <p>{description}</p>
+            </div>
+            <div className={styles.eventInfoHostCat}>
+              <div className={styles.hosts}>
+                <h3>Hosts</h3>
+              </div>
+              <div className={styles.category}>
+                <h3>Category</h3>
+                <svg className={styles.categoryIcon}>
+                  <use xlinkHref={`${sprite}#${category}`} />
+                </svg>
+              </div>
+            </div>
+            <footer className={styles.footer}>
+              {isLive ? <EventPassKey /> : <EventAttendeesComponent />}
+              <ButtonComp
+                className="btn-gradient"
+                link={`events/event/${id}/form`}
+              >
+                {isLive ? "Join now" : "Book a ticket"}
+              </ButtonComp>
+            </footer>
           </div>
         </div>
-        <footer className={styles.footer}>
-          {isLive ? <EventPassKey /> : <EventAttendeesComponent />}
-          <ButtonComp className="btn-gradient" link={`events/event/${id}/form`}>
-            {isLive ? "Join now" : "Book a ticket"}
-          </ButtonComp>
-        </footer>
       </div>
     </>
   );

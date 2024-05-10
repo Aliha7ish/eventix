@@ -7,7 +7,7 @@ import NavigationPages from "../components/NavigationPages";
 function Main() {
   return (
     <div className="main-page">
-      <div>
+      <div className="nav-conatiner">
         <NavigationPages />
       </div>
       <div>

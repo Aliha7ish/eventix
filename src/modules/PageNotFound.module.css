@@ -1,0 +1,123 @@
+.container {
+  height: clamp(100svh, 100vh, 100lvh);
+  text-align: center;
+  padding: 2rem;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 40px;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  background: linear-gradient(246.99deg, #e963ff 14.23%, #5b1e9b 87.31%);
+  filter: blur(150px);
+  background-size: 100% 100%;
+  transform: translate(-50%, -50%);
+  z-index: -20;
+}
+.container::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 250px;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  background: linear-gradient(246.99deg, #e963ff 14.23%, #5b1e9b 87.31%);
+  filter: blur(150px);
+  background-size: 100% 100%;
+  transform: translate(-50%, -50%);
+  z-index: -20;
+}
+
+.heading {
+  font-size: clamp(4rem, 20rem, 27rem);
+  font-weight: 700;
+  color: #fff;
+  text-shadow: 0px 4px 9.2px rgba(233, 99, 255, 1);
+}
+
+.container p {
+  color: rgba(159, 159, 159, 1);
+  font-size: 2.6em;
+}
+.container p:first-of-type {
+  color: #fff;
+  font-weight: 500;
+  font-size: 3em;
+  text-transform: capitalize;
+  margin-bottom: 20px;
+}
+.container a {
+  margin-top: 3.5em;
+}
+
+/* Below 990px */
+@media screen and (max-width: 61.875em) {
+  .container::before {
+    top: 0;
+    right: 40px;
+    width: 150px;
+    height: 150px;
+  }
+  .container::after {
+    left: 250px;
+    width: 100px;
+    height: 100px;
+  }
+  .heading {
+    font-size: clamp(4rem, 15rem, 20rem);
+  }
+  .container p {
+    font-size: 2.2em;
+  }
+  .container p:first-of-type {
+    font-size: 2.8em;
+  }
+}
+
+/* Below 650px */
+@media screen and (max-width: 40.625em) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+  .heading {
+    font-size: clamp(4rem, 12rem, 16rem);
+  }
+  .container p {
+    font-size: 2em;
+  }
+  .container p:first-of-type {
+    font-size: 2.5em;
+  }
+}
+
+/* Below 400px */
+@media screen and (max-width: 25em) {
+  .container {
+    padding: 2rem 1.5rem;
+  }
+  .container::after {
+    left: 75px;
+    width: 85px;
+    height: 85px;
+  }
+  .heading {
+    font-size: clamp(4rem, 10rem, 12rem);
+  }
+  .container p {
+    font-size: 1.8em;
+  }
+  .container p:first-of-type {
+    font-size: 2em;
+  }
+}

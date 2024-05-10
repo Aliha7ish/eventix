@@ -33,37 +33,41 @@
   display: flex;
   flex-direction: column;
   align-items: stretch;
-  gap: 2.5rem;
+  font-weight: 275;
+  gap: 2.8rem;
+  color: rgba(154, 154, 154, 1);
 }
 
 .attendContainer {
   margin-top: -17px;
 }
-.eventOrgContainer {
-  display: flex;
-  gap: 0.8rem;
-  align-items: center;
-}
+
 .eventName,
 .formHeader {
   color: #fff;
-  font-size: 2.6rem;
-  font-weight: 700;
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+.eventName {
+  display: inline-block;
+  margin-right: 10px;
 }
 .organizer {
-  font-size: 1.6rem;
+  display: inline-block;
+  font-size: 1.8em;
   font-weight: 100;
+  vertical-align: baseline;
 }
 .descriptionContainer {
-  margin-bottom: 3rem;
+  margin-bottom: 2rem;
 }
 .descriptionContainer p {
-  font-weight: 300;
+  font-size: 1.6rem;
 }
-h3 {
-  font-size: 2rem;
-  font-weight: 200;
-  color: #fff;
+.informationSide h3 {
+  font-size: 2.2rem;
+  font-weight: 275;
+  color: rgba(237, 237, 237, 1);
 }
 
 .eventInfoHostCat {

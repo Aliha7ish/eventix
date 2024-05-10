@@ -10,8 +10,12 @@
 }
 
 .form__header {
-  font-size: 2rem;
+  font-size: clamp(2.2rem, 1.8vw, 2.8rem);
   font-weight: 200;
+
+  @media screen and (max-width: 90.625em) {
+    font-size: clamp(3.6rem, 2.8vw, 4.8rem);
+  }
 
   // Below 950px
   @media screen and (max-width: 59.375em) {
@@ -19,12 +23,12 @@
   }
 
   & .word-special-gradient {
-    font-size: 6vw;
+    font-size: clamp(3.6rem, 2vw, 4.8rem);
     display: block;
 
     // Above 1250px
     @media screen and (min-width: 78.125em) {
-      font-size: 5rem;
+      font-size: clamp(5rem, 2.5vw, 6.5rem);
     }
 
     // Below 950px
@@ -34,7 +38,7 @@
   }
 }
 .form__heading-2 {
-  font-size: 3.8vw;
+  font-size: clamp(3.6rem, 3.5vw, 4.8rem);
   margin-bottom: 0.8rem;
   font-weight: 400;
 

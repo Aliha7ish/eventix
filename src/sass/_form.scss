@@ -9,10 +9,13 @@
 }
 
 .form__grid {
-  min-height: 100vh;
-  & .form-row {
-    min-height: 100vh;
+  max-height: 100svh;
+
+  // Above 1450px
+  @media screen and (min-width: 90.625em) {
+    min-height: 100svh;
   }
+
   & .col-side-content {
     background: radial-gradient(
         65% 60% at 64% 46%,
@@ -27,8 +30,7 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding: 6rem 5.5rem;
-
+    padding: 0 5.5rem;
     & p {
       font-size: 2rem;
       font-weight: 200;
@@ -36,13 +38,13 @@
     }
 
     // Above 1250px
-    @media screen and (max-width: 78.125em) {
-      padding: 5rem 2rem;
+    @media screen and (min-width: 78.125em) {
+      padding: 0 3rem;
     }
 
-    // Below 950px
-    @media screen and (max-width: 59.375em) {
-      padding: 5rem 2rem;
+    // Below 800px
+    @media screen and (max-width: 50em) {
+      padding: 4rem 2rem;
     }
 
     & .btn-nav-form {
@@ -54,8 +56,14 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 1rem 5rem;
-    gap: 1.6rem;
+    padding: 2vmax 5rem;
+    gap: 3vmax;
+    height: 100%;
+
+    // Above 1450px
+    @media screen and (min-width: 90.625em) {
+      padding: 2vmax 2rem;
+    }
 
     // Below 950px
     @media screen and (max-width: 59.375em) {
@@ -89,13 +97,18 @@
 
 input.form-control {
   background-color: transparent;
-  border: 0.5px solid $color-border-visited;
-  border-radius: 8px;
-  height: 40px;
-  font-size: 16px;
+  border: 1px solid $color-border-visited;
+  border-radius: 10px;
+  height: 60px;
+  font-size: 18px;
   color: #fff;
+  text-indent: 10px;
+  padding: 0;
 
-  padding: 0.35rem 2rem 0.35rem 0.75rem;
+  // Below 700px height
+  @media screen and (max-height: 43.75em) {
+    height: 40px;
+  }
   &:focus {
     border-color: $color-border-active;
     color: #fff;
@@ -111,7 +124,7 @@ input.form-control {
 }
 
 label {
-  font-size: 14px;
+  font-size: 16px;
   font-weight: 400;
   color: $color-white-2;
   margin-bottom: 3px;
@@ -139,14 +152,20 @@ label {
 .show-password-btn {
   background-color: transparent;
   border: none;
-  width: 22px;
-  height: 22px;
-
+  width: 24px;
+  height: 24px;
   position: absolute;
   top: 0;
   right: $pass-icon-position;
-  transform: translateY(34px);
+  transform: translateY(48px);
   transition: all 0.4s;
+
+  // Below 700px height
+  @media screen and (max-height: 43.75em) {
+    width: 22px;
+    height: 22px;
+    transform: translateY(38px);
+  }
 
   & .password-icon {
     width: 100%;
