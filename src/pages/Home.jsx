@@ -47,6 +47,7 @@ export default function Home() {
             <span className={style.loginBtn}>Log In</span>
           </Link>
         </p>
+
       </div>
     </>
   );
