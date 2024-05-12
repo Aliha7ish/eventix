@@ -1,4 +1,7 @@
 /* eslint-disable react/prop-types */
+/* eslint-disable no-empty */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import { useFormik } from "formik";
 import { passwordValidationRegex, specialCharacters } from "./../App";
 import SingleSignonButtons from "./SingleSignonButtons";
@@ -43,12 +46,12 @@ function SignupForm({ isError }) {
     }
 
     if (
-      values.passwordConfirmation !== values.password &&
-      formik.touched.passwordConfirmation
+      values.re_password !== values.password &&
+      formik.touched.re_password
     ) {
-      errors.passwordConfirmation = "passwords are not identical";
-    } else if (!values.passwordConfirmation) {
-      errors.passwordConfirmation = "confirm assigned password";
+      errors.re_password = "passwords are not identical";
+    } else if (!values.re_password) {
+      errors.re_password = "confirm assigned password";
     }
 
     return errors;
@@ -56,14 +59,39 @@ function SignupForm({ isError }) {
   const formik = useFormik({
     initialValues: {
       password: "",
-      passwordConfirmation: "",
+      re_password: "",
       email: "",
       firstName: "",
       lastName: "",
     },
     validate,
-    onSubmit: (values) => {
+    onSubmit: async (values) => {
       console.log(values);
+      try {
+        const name = `${values.firstName} ${values.lastName}`;
+        delete values.firstName;
+        delete values.lastName;
+        values.name = name;
+        values.isProvider = false;
+        console.log(values)
+        const response = await fetch('http://127.0.0.1:8000/auth/users/', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(values)
+        });
+
+        if (!response.ok) {
+            throw new Error('Sign up failed');
+        }
+
+        const data = await response.json();
+        console.log('Sign up successful:', data);
+    } catch (error) {
+        console.error('Error signing up:', error.message);
+    }
+
     },
   });
   return (
@@ -166,24 +194,24 @@ function SignupForm({ isError }) {
             }
           />
           <PasswordField
-            id="passwordConfirmation"
+            id="re_password"
             label="confirm password"
-            value={formik.values.passwordConfirmation}
+            value={formik.values.re_password}
             handleChange={formik.handleChange}
             // handleBlur={formik.handleBlur}
             className={
-              formik.errors.passwordConfirmation
+              formik.errors.re_password
                 ? "input-invalid"
-                : !formik.errors.passwordConfirmation &&
-                  formik.values.passwordConfirmation.length > 1
+                : !formik.errors.re_password &&
+                  formik.values.re_password.length > 1
                 ? "input-valid"
                 : ""
             }
             col="sm-6"
             error={
-              formik.errors.passwordConfirmation ? (
+              formik.errors.re_password ? (
                 <InvalidInput>
-                  {formik.errors.passwordConfirmation}
+                  {formik.errors.re_password}
                 </InvalidInput>
               ) : (
                 ""

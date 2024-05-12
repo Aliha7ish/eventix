@@ -10,8 +10,7 @@
     "deploy": "gh-pages -d dist",
     "build": "vite build",
     "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
-    "preview": "vite preview",
-    "server": "json-server --watch data/fakeAPI.json --port 8000"
+    "preview": "vite preview"
   },
   "dependencies": {
     "bootstrap": "^5.3.2",
