@@ -72,7 +72,7 @@ function SignupForm({ isError }) {
         delete values.firstName;
         delete values.lastName;
         values.name = name;
-        values.isProvider = false;
+        values.is_provider = false;
         console.log(values)
         const response = await fetch('http://127.0.0.1:8000/auth/users/', {
             method: 'POST',
