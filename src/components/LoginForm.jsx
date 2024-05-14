@@ -1,6 +1,9 @@
 import { useFormik } from "formik";
 // import InvalidInput from "./InvalidInput";
-
+/* eslint-disable react/prop-types */
+/* eslint-disable no-empty */
+/* eslint-disable no-unused-vars */
+/* eslint-disable react/prop-types */
 import SeparatorLine from "./SeparatorLine";
 import SingleSignonButtons from "./SingleSignonButtons";
 import { Link } from "react-router-dom";
@@ -30,8 +33,33 @@ function LoginForm() {
       email: "",
     },
     validate,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      try {
+        const response = await fetch('http://127.0.0.1:8000/auth/jwt/create/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify({
+            email: values.email,
+            password: values.password,
+          }),
+        });
+
+        if (!response.ok) {
+          throw new Error('Login failed');
+        }
+
+        const data = await response.json();
+
+        const { access, refresh } = response.data;
+        localStorage.setItem('accessToken', access);
+        localStorage.setItem('refreshToken', refresh);
+        console.log('Login successful:', response.data);
+
+      } catch (error) {
+        console.error('Error logging in:', error);
+      }
     },
   });
   return (
