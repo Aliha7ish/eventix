@@ -1,11 +1,12 @@
 import { useFormik } from "formik";
 // import InvalidInput from "./InvalidInput";
-
+import { useNavigate } from 'react-router-dom';
 import SeparatorLine from "./SeparatorLine";
 import SingleSignonButtons from "./SingleSignonButtons";
 import { Link } from "react-router-dom";
 import PasswordField from "./PasswordField";
 function LoginForm() {
+  const navigate = useNavigate();
   const validate = (values) => {
     const errors = {};
 
@@ -30,8 +31,26 @@ function LoginForm() {
       email: "",
     },
     validate,
-    onSubmit: (values) => {
-      console.log(values);
+    onSubmit: async (values) => {
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/auth/jwt/create", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(values),
+          });
+
+          const data =  await response.json();
+          const accessToken = data.access;
+
+          localStorage.setItem('accessToken', accessToken);
+          console.log("Login successful");
+          navigate('/home');
+          
+          } catch (error) {
+            console.error(error.message);
+      }
     },
   });
   return (
