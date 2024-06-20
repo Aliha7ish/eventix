@@ -30,7 +30,7 @@ function App() {
             <Route path="create-account" element={<CreateUserPage />} />
             <Route path="login" element={<LoginPage />} />
             <Route path="/" element={<Main />}>
-              <Route path="/" index element={<Home />} />
+              <Route path="/home" element={<Home />} />
               <Route path="events" element={<Browse />}>
                 <Route path="/events/event" element={<PopUpWindow />}>
                   <Route
@@ -54,9 +54,6 @@ function App() {
           </Routes>
         </BrowserRouter>
       </EventsProvider>
-      {/* {gradientArr.map((comp) => {
-        return <BodyGradientBackground key={comp} num={comp} />;
-      })} */}
     </>
   );
 }

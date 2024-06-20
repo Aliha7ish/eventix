@@ -2,7 +2,7 @@ $gradient-font-main: linear-gradient(90deg, #5b1e9b 0%, #e963ff 65.64%);
 $gradient-bg: linear-gradient(90deg, #e963ff 0%, #5b1e9b 100%);
 $gradient-aqua-violet: linear-gradient(90deg, #00e0ff 0%, #5b1e9b 100%);
 
-$main-body-bg-color: #0a0a0a;
+$main-body-bg-color: #111;
 $main-body-gradient-color: linear-gradient(
   246.99deg,
   #e963ff 14.23%,
@@ -37,4 +37,5 @@ $font-inter: "Inter", sans-serif;
 @import "./sass/btsrbCustom";
 @import "./sass/buttons";
 @import "./sass/mainPage";
+@import "./sass/grid";
 @import "./sass/navigations";

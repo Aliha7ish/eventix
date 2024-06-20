@@ -21,7 +21,7 @@
   }
 
   @media screen and (min-width: 87.5em) {
-      font-size: 1.8rem;
+    font-size: 1.8rem;
   }
 
   // Below 500px
@@ -45,11 +45,6 @@
     background-color: transparent;
     font-weight: 300;
     text-transform: capitalize;
-    padding: 18px 34px;
-
-    @media screen and (max-width: 47.9375em) {
-      padding: 12px 18px;
-    }
 
     &:hover,
     &:active {
@@ -60,36 +55,67 @@
   &-gradient {
     background: $gradient-bg;
     border: none;
-    padding: 18px 34px;
+  }
 
-    @media screen and (max-width: 47.9375em) {
-      padding: 12px 18px;
+  &-transparent,
+  &-gradient {
+    padding: 1vw 2vw;
+
+    @media screen and (max-width: 56.25em) {
+      padding: 1.4vw 2.4vw;
+    }
+
+    @media screen and (max-width: 40.625em) {
+      padding: 1.6vw 2.8vw;
+    }
+
+    @media screen and (max-width: 31.25em) {
+      padding: 2vw 3.2vw;
+    }
+
+    @media screen and (max-width: 25em) {
+      padding: 10px 16px;
     }
   }
   &-sso {
     background-color: $color-dark;
     background: $border-gradient;
-    width: 290px;
-    height: 66px;
-    gap: 1rem;
+    gap: 10px;
+    padding: 1vw 0;
+    width: 25vw;
 
-    @media screen and (min-width: 87.5em) {
-      width: 410px;
-      height: 50px;
+    // Below 11000px
+    @media screen and (max-width: 68.75em) {
+      padding: 1.6vw 0;
+      width: 32vw;
     }
 
-    @media screen and (max-width: 56.25em) {
-      width: 280px;
-      height: 50px;
+    // Below 950px
+    @media screen and (max-width: 59.375em) {
+      padding: 1.8vw 0;
+      width: 35vw;
     }
-    @media screen and (max-width: 31.25em) {
-      width: 290px;
-      padding: 0 1.2rem;
+
+    // Below 750px
+    @media screen and (max-width: 46.875em) {
+      padding: 14px 0;
+      width: 38vw;
     }
-    // Below 300px
+
+    // Below 550px
+    @media screen and (max-width: 34.875em) {
+      padding: 10px 0;
+      width: 297px;
+    }
+
+    // Below 350px
     @media screen and (max-width: 18.75em) {
       width: 250px;
-      padding: 0 0.6rem;
+    }
+
+    // Below 300px
+    @media screen and (max-width: 18.75em) {
+      width: 245px;
     }
   }
   &-link {
@@ -114,8 +140,8 @@
 
 .btn-icon,
 .btn-icon use {
-  width: 22px;
-  height: 22px;
+  width: 24px;
+  height: 24px;
 }
 
 .sso-grid-container {

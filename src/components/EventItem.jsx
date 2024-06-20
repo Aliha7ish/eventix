@@ -6,8 +6,9 @@ import { useEvent } from "../contextAPI/EventsProvider";
 import styles from "../modules/EventItem.module.css";
 import VirtualBadge from "./VirtualBadge";
 import { Link } from "react-router-dom";
+import ButtonComp from "./ButtonComp";
 
-function EventItem({ event }) {
+function EventItem({ event, addButton = false }) {
   return (
     <Link to={`/events/event/${event.id}`}>
       <li className={styles.item}>
@@ -23,6 +24,7 @@ function EventItem({ event }) {
           <p>{event.date}</p>
           <p>{event.time}</p>
         </div>
+        {addButton ? <ButtonComp /> : ""}
       </li>
     </Link>
   );

@@ -1,9 +1,9 @@
 .item {
-  height: 20rem;
+  height: 100%;
   position: relative;
   overflow: hidden;
   border-radius: 8px;
-  display: flex;
+  display: inline-flex;
   flex-direction: column;
   justify-content: end;
   gap: 0.8rem;

@@ -1,3 +1,48 @@
+// --------------------------------
+// Reset
+// --------------------------------
+
+*,
+*::after,
+*::before,
+body {
+  padding: 0;
+  margin: 0;
+  box-sizing: inherit;
+
+  hyphens: auto;
+  -moz-hyphens: auto;
+  -ms-hyphens: auto;
+  -webkit-hyphens: auto;
+}
+
+// Make images easier to work with
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+// Make form elements easier to work with
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+// Remove animations for user who turned it off
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::after,
+  *::before {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
 html {
   font-size: 62.5%;
   box-sizing: border-box;
@@ -7,7 +52,7 @@ html {
 
   // Above 1450px
   @media screen and (min-width: 90.625em) {
-    font-size: 87.5%;
+    font-size: 64.5%;
   }
 
   // Below 800px (1rem = 9px) ---> BreakPoint / 16
@@ -25,20 +70,6 @@ html {
   @media screen and (max-width: 21.875em) {
     font-size: 43.75%;
   }
-}
-
-*,
-*::after,
-*::before,
-body {
-  padding: 0;
-  margin: 0;
-  box-sizing: inherit;
-
-  hyphens: auto;
-  -moz-hyphens: auto;
-  -ms-hyphens: auto;
-  -webkit-hyphens: auto;
 }
 
 $circle-size: 100px;
@@ -134,3 +165,5 @@ input:-webkit-autofill:active {
   transition: background-color 5000s ease-in-out 0s;
   box-shadow: inset 0 0 20px 20px #23232329;
 }
+
+// Grid

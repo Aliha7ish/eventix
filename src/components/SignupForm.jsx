@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-empty */
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/prop-types */
@@ -45,10 +44,7 @@ function SignupForm({ isError }) {
         "at least 1 lowercase letter, 1 uppercase letter, 1 symbol, 1 digit";
     }
 
-    if (
-      values.re_password !== values.password &&
-      formik.touched.re_password
-    ) {
+    if (values.re_password !== values.password && formik.touched.re_password) {
       errors.re_password = "passwords are not identical";
     } else if (!values.re_password) {
       errors.re_password = "confirm assigned password";
@@ -73,25 +69,24 @@ function SignupForm({ isError }) {
         delete values.lastName;
         values.name = name;
         values.is_provider = false;
-        console.log(values)
-        const response = await fetch('http://127.0.0.1:8000/auth/users/', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(values)
+        console.log(values);
+        const response = await fetch("http://127.0.0.1:8000/auth/users/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(values),
         });
 
         if (!response.ok) {
-            throw new Error('Sign up failed');
+          throw new Error("Sign up failed");
         }
 
         const data = await response.json();
-        console.log('Sign up successful:', data);
-    } catch (error) {
-        console.error('Error signing up:', error.message);
-    }
-
+        console.log("Sign up successful:", data);
+      } catch (error) {
+        console.error("Error signing up:", error.message);
+      }
     },
   });
   return (
@@ -210,9 +205,7 @@ function SignupForm({ isError }) {
             col="sm-6"
             error={
               formik.errors.re_password ? (
-                <InvalidInput>
-                  {formik.errors.re_password}
-                </InvalidInput>
+                <InvalidInput>{formik.errors.re_password}</InvalidInput>
               ) : (
                 ""
               )
