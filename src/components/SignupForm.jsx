@@ -70,7 +70,7 @@ function SignupForm({ isError }) {
         values.name = name;
         values.is_provider = false;
         console.log(values);
-        const response = await fetch("http://127.0.0.1:8000/auth/users/", {
+        const response = await fetch("http://127.0.0.1:8000/api/auth/users/", {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
