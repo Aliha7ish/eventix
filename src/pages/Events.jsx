@@ -7,7 +7,7 @@ import EventsCollection from "../components/EventsCollection";
 export default function Events() {
   return (
     <>
-      <section className={styles.eventsSection}>
+      <section className={`${styles.eventsSection}`}>
         {/* <GridContainer2R /> */}
         {/* <GridCatContainer1R />   */}
         <EventsCollection />

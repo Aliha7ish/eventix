@@ -153,6 +153,7 @@ body {
 
 a {
   text-decoration: none;
+  width: fit-content;
 }
 
 //Reseting input field when it's auto completed
@@ -166,4 +167,7 @@ input:-webkit-autofill:active {
   box-shadow: inset 0 0 20px 20px #23232329;
 }
 
-// Grid
+// Custom classes
+.mg-top-lg {
+  margin-top: clamp(60px, 10rem, 130px);
+}

@@ -1,0 +1,41 @@
+.toggle-container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+
+  border-width: 0.85px;
+  border-radius: 50px;
+  border-style: solid;
+  background-color: rgba(27, 25, 27, 1);
+  background: linear-gradient(0deg, #1b191b, #1b191b) padding-box,
+    linear-gradient(180deg, #e963ff 0%, #5b1e9b 100%) border-box;
+  border-image-source: linear-gradient(180deg, #e963ff 0%, #5b1e9b 100%);
+}
+.toggle-panel {
+  padding: 0.5rem 2.6rem;
+  cursor: pointer;
+  z-index: 100;
+}
+.toggle-panel p {
+  font-size: 16px;
+  user-select: none;
+}
+.toggle {
+  position: absolute;
+  display: inline-block;
+  width: 50%;
+  height: 100%;
+  top: 0;
+  background: linear-gradient(180deg, #e963ff 0%, #5b1e9b 100%);
+  border-radius: 50px;
+
+  transition: all 0.4s ease-in-out;
+}
+.toggle-left {
+  left: 0;
+}
+.toggle-right {
+  left: 100%;
+}

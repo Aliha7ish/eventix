@@ -1,0 +1,23 @@
+.logo {
+  font-size: clamp(26px, 6.6rem, 82px);
+  font-weight: 900;
+  width: fit-content;
+  display: inline-block;
+  position: absolute;
+  z-index: 1000;
+  user-select: none;
+  margin-bottom: clamp(20px, 2.6rem, 46px);
+}
+.logo span {
+  background-color: #5b1e9b;
+  background-size: 100%;
+  background-image: linear-gradient(90deg, #e963ff 0%, #5b1e9b 100%);
+  -webkit-background-clip: text;
+  -moz-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -moz-text-fill-color: transparent;
+}
+.logo span:last-of-type {
+  display: inline-block;
+  transform: translateX(-16px);
+}

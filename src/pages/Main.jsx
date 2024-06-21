@@ -7,15 +7,21 @@ import NavigationPages from "../components/NavigationPages";
 import About from "./About";
 import Home from "./Home";
 import Events from "./Events";
+import EventixLogo from "../components/EventixLogo";
+import Browse from "./Browse";
 function Main() {
   return (
     <div className="main-page">
       <div className="nav-conatiner">{/* <NavigationPages /> */}</div>
-      <div>
-        {/* <Outlet /> */}
-        {/* <Home />
-        <About /> */}
-        <Events />
+      <div className="main-page-container-inner">
+        <EventixLogo />
+        <div>
+          {/* <Outlet /> */}
+          {/* <Home />
+          <About /> */}
+          {/* <Events /> */}
+          <Browse />
+        </div>
       </div>
       <div></div>
     </div>
