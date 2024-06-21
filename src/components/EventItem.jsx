@@ -10,7 +10,7 @@ import ButtonComp from "./ButtonComp";
 
 function EventItem({ event, addButton = false }) {
   return (
-    <Link to={`/events/event/${event.id}`}>
+    <Link to={`${event.id}`}>
       <li className={styles.item}>
         {event.type === "virtual" ? <VirtualBadge /> : null}
         <div className={styles.imgContainer}>
