@@ -14,12 +14,13 @@
   border-image-source: linear-gradient(180deg, #e963ff 0%, #5b1e9b 100%);
 }
 .toggle-panel {
-  padding: 0.5rem 2.6rem;
+  padding: 0.5rem 2rem;
   cursor: pointer;
   z-index: 100;
 }
 .toggle-panel p {
-  font-size: 16px;
+  font-size: 1.2em;
+  text-transform: capitalize;
   user-select: none;
 }
 .toggle {
@@ -37,5 +38,5 @@
   left: 0;
 }
 .toggle-right {
-  left: 100%;
+  left: 50%;
 }

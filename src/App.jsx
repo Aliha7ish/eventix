@@ -31,18 +31,12 @@ function App() {
             <Route path="login" element={<LoginPage />} />
             <Route path="/" element={<Main />}>
               <Route path="/home" element={<Home />} />
-              <Route path="events" element={<Browse />}>
-                <Route path="/events/event" element={<PopUpWindow />}>
-                  <Route
-                    path="/events/event/:id"
-                    index
-                    element={<EventDetails />}
-                  />
-                  <Route
-                    path="/events/event/:id/form"
-                    element={<BookingTicketsForm />}
-                  />
-                </Route>
+              <Route path="/events" element={<Browse />}>
+                <Route path="/events/:id" element={<EventDetails />} />
+                <Route
+                  path="/events/:id/book-event"
+                  element={<BookingTicketsForm />}
+                />
               </Route>
               <Route path="about" element={<About />} />
             </Route>

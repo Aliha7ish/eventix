@@ -3,10 +3,10 @@
 /* eslint-disable react/prop-types */
 import { Outlet } from "react-router-dom";
 import styles from "../modules/PopUpWindow.module.css";
-export default function PopUpWindow() {
+export default function PopUpWindow({ children }) {
   return (
     <div className={styles.popup}>
-      <div className={styles.popupContent}>{<Outlet />}</div>
+      <div className={styles.popupContent}>{children}</div>
     </div>
   );
 }

@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 export default function EventixLogo() {
   return (
     <Link to="/home">
-      <a className={styles.logo}>
+      <p className={styles.logo}>
         <span>E</span>
         <span>X</span>
-      </a>
+      </p>
     </Link>
   );
 }

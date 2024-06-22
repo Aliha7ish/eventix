@@ -7,9 +7,7 @@
   font-weight: 100;
   font-size: clamp(24px, 4.6vw, 36px);
 }
-.eventixWord {
-  font-size: clamp(28px, 5vw, 40px);
-}
+
 .headerFlexContainerInner {
   display: flex;
   flex-direction: column;
@@ -17,3 +15,14 @@
   justify-content: center;
   gap: 5px;
 }
+.eventixWord {
+  font-size: clamp(28px, 4vw, 40px);
+}
+.btnsContainer {
+  font-size: clamp(20px, 3vw, 36px);
+}
+/* .categories {
+  display: flex;
+  flex-direction: column;
+  
+} */
