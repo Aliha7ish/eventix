@@ -17,9 +17,9 @@ function Main() {
         <EventixLogo />
         <div>
           {/* <Outlet /> */}
-          {/* <Home />
-          <About /> */}
-          {/* <Events /> */}
+          <Home />
+          <About />
+          <Events />
           <Browse />
         </div>
       </div>

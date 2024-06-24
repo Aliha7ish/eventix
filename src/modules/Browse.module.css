@@ -21,8 +21,3 @@
 .btnsContainer {
   font-size: clamp(20px, 3vw, 36px);
 }
-/* .categories {
-  display: flex;
-  flex-direction: column;
-  
-} */

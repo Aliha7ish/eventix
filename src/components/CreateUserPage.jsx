@@ -17,7 +17,7 @@ function CreateUserPage() {
           Excited to have you return! Let’s shape unforgettable events together.
         </p>
 
-        <ButtonComp link="login" className="btn-transparent btn-nav-form">
+        <ButtonComp link="/login" className="btn-transparent btn-nav-form">
           logIn
         </ButtonComp>
       </FormSideContent>

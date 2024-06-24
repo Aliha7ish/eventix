@@ -55,7 +55,7 @@ function EventDetails() {
                 {isLive ? <EventPassKey /> : <EventAttendeesComponent />}
                 <ButtonComp
                   className="btn-gradient"
-                  link={`events/${id}/book-event`}
+                  link={`/discover/${id}/book-event`}
                 >
                   {isLive ? "Join now" : "Book a ticket"}
                 </ButtonComp>

@@ -8,7 +8,10 @@ import EventixOverlapWord from "../components/EventixOverlapWord";
 
 export default function About() {
   return (
-    <section id="/about" className={`${styles.aboutSection}`}>
+    <section
+      id="/about"
+      className={`${styles.aboutSection} padding-left-lg-section `}
+    >
       <div className={styles.content}>
         <article>
           <div className={styles.textContent}>

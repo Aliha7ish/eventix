@@ -15,6 +15,7 @@ import PopUpWindow from "./components/PopUpWindow";
 import EventDetails from "./components/EventDetails";
 import BookingTicketsForm from "./components/BookingTicketsForm";
 import PageNotFound from "./pages/PageNotFound";
+import CategoryGrid from "./components/CategoryGrid";
 
 export const specialCharacters = /[0-9!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]+/;
 export const passwordValidationRegex =
@@ -27,22 +28,25 @@ function App() {
         <BrowserRouter>
           <Routes>
             <Route path="*" element={<PageNotFound />} />
-            <Route path="create-account" element={<CreateUserPage />} />
-            <Route path="login" element={<LoginPage />} />
+            <Route path="/create-account" element={<CreateUserPage />} />
+            <Route path="/login" element={<LoginPage />} />
             <Route path="/" element={<Main />}>
-              <Route path="/home" element={<Home />} />
-              <Route path="/events" element={<Browse />}>
-                <Route path="/events/:id" element={<EventDetails />} />
+              <Route path="home" element={<Home />} />
+              <Route path="/discover" element={<Browse />}>
+                {/* ----------------------------------- */}
+                {/* event details will be displayed conditionally */}
+                {/* ----------------------------------- */}
+                <Route path="/discover/:id" element={<EventDetails />} />
                 <Route
-                  path="/events/:id/book-event"
+                  path="/discover/:id/book-event"
                   element={<BookingTicketsForm />}
                 />
               </Route>
-              <Route path="about" element={<About />} />
+              <Route path="/about" element={<About />} />
             </Route>
             <Route index element={<Main />} />
             <Route
-              path="account-recovery-center"
+              path="/account-recovery-center"
               element={<AccountRecovery />}
             />
           </Routes>

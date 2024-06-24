@@ -7,9 +7,14 @@ import ButtonComp from "./ButtonComp";
 import PopUpWindow from "./PopUpWindow";
 import { useState } from "react";
 function BookingTicketsForm() {
+  const [submissionStatus, setSubmissionStatus] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
+    creditCardNo1: "",
+    creditCardNo2: "",
+    creditCardNo3: "",
+    creditCardNo4: "",
     creditCard: "",
     cvv: "",
     expirationDateDisplay: "", // For MM/YY display
@@ -40,6 +45,10 @@ function BookingTicketsForm() {
     }
   };
 
+  const getCombinedCreditCardNumber = () => {
+    return (formData.creditCard = `${formData.creditCardNo1}${formData.creditCardNo2}${formData.creditCardNo3}${formData.creditCardNo4}`);
+  };
+
   const validate = () => {
     const newErrors = {};
 
@@ -58,9 +67,33 @@ function BookingTicketsForm() {
     }
 
     // Validate credit card number
-    if (!formData.creditCard) {
+    if (!formData.creditCardNo1) {
+      newErrors.creditCardNo1 = "Credit card number is required";
+    } else if (!/^\d{4}$/.test(formData.creditCardNo1)) {
+      newErrors.creditCardNo1 = "Credit card number should be 4 digits";
+    }
+    // Validate credit card number
+    if (!formData.creditCardNo2) {
+      newErrors.creditCardNo2 = "Credit card number is required";
+    } else if (!/^\d{4}$/.test(formData.creditCardNo2)) {
+      newErrors.creditCardNo2 = "Credit card number should be 4 digits";
+    }
+    // Validate credit card number
+    if (!formData.creditCardNo3) {
+      newErrors.creditCardNo3 = "Credit card number is required";
+    } else if (!/^\d{4}$/.test(formData.creditCardNo3)) {
+      newErrors.creditCardNo3 = "Credit card number should be 4 digits";
+    }
+    // Validate credit card number
+    if (!formData.creditCardNo4) {
+      newErrors.creditCardNo4 = "Credit card number is required";
+    } else if (!/^\d{4}$/.test(formData.creditCardNo4)) {
+      newErrors.creditCardNo4 = "Credit card number should be 4 digits";
+    }
+    const combinedCreditCardNumber = getCombinedCreditCardNumber();
+    if (!combinedCreditCardNumber) {
       newErrors.creditCard = "Credit card number is required";
-    } else if (!/^\d{16}$/.test(formData.creditCard)) {
+    } else if (!/^\d{16}$/.test(combinedCreditCardNumber)) {
       newErrors.creditCard = "Credit card number should be 16 digits";
     }
 
@@ -94,11 +127,41 @@ function BookingTicketsForm() {
     return Object.keys(newErrors).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (validate()) {
-      console.log("Form data is valid:", formData);
-      // Perform the desired action (e.g., submit the form)
+      // const combinedCreditCardNumber = getCombinedCreditCardNumber();
+      const dataToSubmit = {
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        creditCard: formData.creditCard,
+        cvv: formData.cvv,
+        expirationDate: formData.expirationDate,
+      };
+      const token = localStorage.getItem("userToken");
+
+      try {
+        const response = await fetch("http://127.0.0.1:8000/api/tickets/", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${token}`,
+          },
+          body: JSON.stringify(dataToSubmit),
+        });
+
+        if (response.ok) {
+          const result = await response.json();
+          setSubmissionStatus("Form submitted successfully!");
+          console.log("Submission result:", result);
+        } else {
+          setSubmissionStatus("Failed to submit form.");
+          console.error("Submission failed:", response.statusText);
+        }
+      } catch (error) {
+        setSubmissionStatus("Failed to submit form.");
+        console.error("Submission error:", error);
+      }
     }
   };
   return (
@@ -148,7 +211,19 @@ function BookingTicketsForm() {
                     id="card-number"
                     className={`form-control ${styles.bookingInput}`}
                     type="text"
-                    name="card-number-1"
+                    minLength={4}
+                    maxLength={4}
+                    name="creditCardNo1"
+                    value={formData.creditCardNo1}
+                    onChange={handleChange}
+                  />
+                  <input
+                    id="card-number"
+                    className={`form-control ${styles.bookingInput}`}
+                    type="text"
+                    name="creditCardNo2"
+                    value={formData.creditCardNo2}
+                    onChange={handleChange}
                     minLength={4}
                     maxLength={4}
                   />
@@ -156,7 +231,9 @@ function BookingTicketsForm() {
                     id="card-number"
                     className={`form-control ${styles.bookingInput}`}
                     type="text"
-                    name="card-number-2"
+                    name="creditCardNo3"
+                    value={formData.creditCardNo3}
+                    onChange={handleChange}
                     minLength={4}
                     maxLength={4}
                   />
@@ -164,18 +241,13 @@ function BookingTicketsForm() {
                     id="card-number"
                     className={`form-control ${styles.bookingInput}`}
                     type="text"
-                    name="card-number-3"
+                    name="creditCardNo4"
+                    value={formData.creditCardNo4}
+                    onChange={handleChange}
                     minLength={4}
                     maxLength={4}
                   />
-                  <input
-                    id="card-number"
-                    className={`form-control ${styles.bookingInput}`}
-                    type="text"
-                    name="card-number-4"
-                    minLength={4}
-                    maxLength={4}
-                  />
+                  {/* {errors.creditCard && <span>{errors.creditCard}</span>} */}
                 </div>
               </div>
               <div className={`${styles.billingLastInputsContainer} col-12`}>

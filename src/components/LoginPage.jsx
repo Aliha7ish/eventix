@@ -15,7 +15,7 @@ function LoginPage() {
           magic begin!
         </p>
         <ButtonComp
-          link="create-account"
+          link="/create-account"
           className="btn-transparent btn-nav-form"
         >
           Sign Up

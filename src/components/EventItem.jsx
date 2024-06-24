@@ -21,24 +21,47 @@ function EventItem({ event, addButton = false }) {
     const period = hours >= 12 ? "PM" : "AM";
     const formattedHours = hours % 12 || 12; // Convert 24-hour format to 12-hour format
     const formattedMinutes = minutes.toString().padStart(2, "0"); // Ensure two digits
+    const formattedDay = `${day}-${month}`;
+    const formattedTime = `${formattedHours}:${formattedMinutes} ${period}`;
 
-    return `${day}-${month} ${formattedHours}:${formattedMinutes}  ${period}`;
+    return { formattedDay, formattedTime };
   };
+  const { formattedDay, formattedTime } = formatDateTime(event.start_time);
   return (
-    <Link to={`/events/${event.id}`}>
+    <Link to={`/discover/${event.id}`}>
       <div className={styles.eventItem}>
-        {event.type === "virtual" ? <VirtualBadge /> : null}
+        {event.type === "virtual" && (
+          <div className={styles.eventHeader}>
+            <VirtualBadge className={styles.headerVirtualBadge} />
+          </div>
+        )}
         <div className={styles.imgContainer}>
           <img src={event.image}></img>
         </div>
-        <div className={styles.eventOrgContainer}>
-          <p className={styles.eventName}>{event.title}</p>
-          <p className={styles.organizer}>Osama</p>
+        <div className={styles.eventFooter}>
+          <div className={styles.eventOuterOrgContainer}>
+            <div className={styles.eventOrgContainer}>
+              <p className={`text-truncate ${styles.eventName}`}>
+                {event.title}
+              </p>
+              <p className={styles.organizer}>Osama</p>
+            </div>
+            <div className={styles.eventDateContainer}>
+              <p>{formattedDay}</p>
+              <p>{formattedTime}</p>
+            </div>
+          </div>
+          {addButton ? (
+            <ButtonComp
+              link={`/discover/${event.id}`}
+              className={`btn-gradient ${styles.eventBtn}`}
+            >
+              Join now
+            </ButtonComp>
+          ) : (
+            ""
+          )}
         </div>
-        <div className={styles.eventDateContainer}>
-          <p>{formatDateTime(event.start_time)}</p>
-        </div>
-        {addButton ? <ButtonComp /> : ""}
       </div>
     </Link>
   );

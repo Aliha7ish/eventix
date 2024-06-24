@@ -1,7 +1,7 @@
 .btn {
   // text-transform: capitalize;
   border-radius: 45px;
-  font-size: clamp(18px, 2vw, 2rem);
+  font-size: clamp(18px, 1.6vw, 1.8rem);
   border-width: 1px;
   border-style: solid;
   color: $text-color-primary;
@@ -81,8 +81,8 @@
     background-color: $color-dark;
     background: $border-gradient;
     gap: 10px;
-    padding: 1vw 0;
-    width: 25vw;
+    padding: 0.5vw 0;
+    width: 22vw;
 
     // Below 11000px
     @media screen and (max-width: 68.75em) {

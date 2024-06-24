@@ -1,13 +1,13 @@
-.categoryMainContainer {
+/* .categoryMainContainer {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
-}
-.categoryContainer {
+} */
+/* .categoryContainer {
   width: 100%;
   position: relative;
-}
-.categoryContainerInner {
+} */
+/* .categoryContainerInner {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(300px, 26vw));
   grid-template-rows: repeat(auto-fill, minmax(150px, 10vw));
@@ -15,7 +15,7 @@
   grid-auto-flow: row;
   grid-auto-rows: minmax(150px, 10vw);
   gap: 10px;
-}
+} */
 .categoryName {
   font-size: clamp(18px, 2vw, 2.4rem);
   font-weight: 400;

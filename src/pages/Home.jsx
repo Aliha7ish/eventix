@@ -8,7 +8,10 @@ import { Link } from "react-router-dom";
 export default function Home() {
   return (
     <>
-      <section id="home" className={styles.homeSection}>
+      <section
+        id="home"
+        className={`padding-left-lg-section ${styles.homeSection}`}
+      >
         <div className={styles.container}>
           <h1 className={styles.heading}>
             Craft unforgettable moments <span>Real-time or Virtual.</span>

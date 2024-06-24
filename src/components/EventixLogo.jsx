@@ -5,8 +5,8 @@ import styles from "../modules/EventixLogo.module.css";
 import { Link } from "react-router-dom";
 export default function EventixLogo() {
   return (
-    <Link to="/home">
-      <p className={styles.logo}>
+    <Link to="/home" className={styles.logo}>
+      <p>
         <span>E</span>
         <span>X</span>
       </p>

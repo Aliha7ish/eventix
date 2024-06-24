@@ -6,6 +6,31 @@
   justify-content: center;
 
   padding: 0;
+  font-weight: 200;
+
+  @media screen and (max-width: 90.625em) {
+    font-size: clamp(2.2rem, 1.8vw, 2.8rem);
+  }
+
+  // Below 950px
+  @media screen and (max-width: 59.375em) {
+    font-size: 1.8rem;
+  }
+
+  & .word-special-gradient {
+    font-size: clamp(3.6rem, 2vw, 4.8rem);
+    display: block;
+
+    // Above 1250px
+    @media screen and (min-width: 78.125em) {
+      font-size: clamp(5rem, 2.5vw, 6.5rem);
+    }
+
+    // Below 950px
+    @media screen and (max-width: 59.375em) {
+      font-size: 3.8rem;
+    }
+  }
 }
 
 .form__grid {

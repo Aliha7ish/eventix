@@ -3,9 +3,9 @@
 /* eslint-disable react/prop-types */
 import styles from "../modules/VirtualBadge.module.css";
 
-function VirtualBadge() {
+function VirtualBadge({ className = "" }) {
   return (
-    <div className={styles.badge}>
+    <div className={`${className} ${styles.badge}`}>
       <span>Virtual</span>
     </div>
   );

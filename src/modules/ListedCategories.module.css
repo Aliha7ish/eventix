@@ -4,11 +4,12 @@
 }
 .listContainerInner {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-rows: minmax(150px, 8vw);
-  grid-auto-columns: minmax(250px, 1fr);
+  grid-template-columns: repeat(5, minmax(250px, 315px));
+  grid-template-rows: minmax(135px, 6vw);
+  grid-auto-columns: minmax(250px, 315px);
   grid-auto-flow: column;
   gap: 1vw;
+  justify-content: center;
 }
 .categoryItem {
   color: white;
@@ -17,22 +18,27 @@
   justify-content: center;
   align-items: center;
   gap: 15px;
-  font-size: clamp(1.8rem, 1.6vw, 2.6rem);
+
   height: 100%;
   border-radius: 8px;
-  cursor: pointer;
 
   border-width: 0.85px;
   border-style: solid;
+  border-color: rgba(154, 154, 154, 0.3);
   background-color: rgba(27, 25, 27, 1);
-  background: linear-gradient(0deg, #1b191b, #1b191b) padding-box,
-    linear-gradient(180deg, #e963ff 0%, #5b1e9b 100%) border-box;
-  border-image-source: linear-gradient(180deg, #e963ff 0%, #5b1e9b 100%);
+}
+.categoryItem p {
+  font-size: clamp(1.6rem, 1.2vw, 2.4rem);
 }
 .categoryItem p::first-letter {
   text-transform: uppercase;
 }
 .categoryItem svg {
-  width: clamp(30px, 2.8vw, 3.8rem);
-  height: clamp(30px, 2.8vw, 3.8rem);
+  width: clamp(30px, 2.4vw, 3.4rem);
+  height: clamp(30px, 2.4vw, 3.4rem);
+}
+.activeCategoryItem .categoryItem {
+  background: linear-gradient(0deg, #1b191b, #1b191b) padding-box,
+    linear-gradient(180deg, #e963ff 0%, #5b1e9b 100%) border-box;
+  border-image-source: linear-gradient(180deg, #e963ff 0%, #5b1e9b 100%);
 }

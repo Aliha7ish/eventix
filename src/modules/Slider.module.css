@@ -1,0 +1,20 @@
+.swiper-pagination {
+  display: none !important;
+}
+.swiper-container {
+  position: relative;
+}
+.swiper-container .swiper-wrapper {
+  display: grid;
+  grid-template-rows: minmax(160px, 10vw);
+  grid-auto-flow: column;
+}
+.swiper-container .swiper-wrapper .swiper-slide {
+  background-color: #4caf50;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.8em;
+  height: 100%;
+}

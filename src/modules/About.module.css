@@ -1,20 +1,19 @@
 .aboutSection {
   max-width: 100vw;
   width: 100%;
-  height: clamp(120svh, 100dvh, 100lvh);
-  padding-right: var(--padding-base);
+  height: clamp(100svh, 100dvh, 100lvh);
 }
 .content {
-  padding: 6vh 0;
+  /* padding: 6vh 0; */
   display: grid;
   grid-template-rows: repeat(3, minmax(0, auto));
   align-content: center;
   height: 100%;
-  gap: 4vh;
+  gap: 2.5vh;
 }
 .content article {
   display: flex;
-  height: 42vh;
+  /* height: 42vh; */
   gap: 2rem;
   font-size: 20vh;
 }
@@ -23,7 +22,7 @@
   max-width: min(155ch, 90%);
 }
 .textContent h2 {
-  font-size: max(10.6%, min(80%, 30%));
+  font-size: max(10.6%, min(80%, 28%));
   font-weight: 100;
   padding-bottom: 1.4vw;
   padding-top: 1.3vw;
@@ -32,7 +31,7 @@
   vertical-align: -webkit-baseline-middle;
 }
 .textContent p {
-  font-size: max(12%, min(1.8rem));
+  font-size: max(10%, min(1.6rem));
   font-weight: 500;
   line-height: 30px;
   text-align: left;
@@ -40,8 +39,6 @@
 }
 .imageContent {
   width: 100%;
-  display: flex;
-  justify-content: center;
 }
 .imageContent > div {
   overflow: hidden;
@@ -52,6 +49,7 @@
 .imageContent img {
   width: 100%;
   object-fit: cover;
+  aspect-ratio: 2 / 1;
 }
 .imageContent > div::before {
   content: "";
@@ -64,6 +62,18 @@
 
   background: linear-gradient(180deg, #191919 0%, rgba(0, 0, 0, 0) 100%);
 }
+/* .imageContent > div::after {
+  content: "";
+  display: block;
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(45deg, #f1f1f1 80%, #fff);
+  z-index: -100;
+} */
 
 /* Queries */
 /* Below 1150px */

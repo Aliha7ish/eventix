@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 export default function ButtonComp({ link = "", children, className = "" }) {
   return (
-    <Link to={`/${link}`} className={`btn ${className}`}>
+    <Link to={`${link}`} className={`btn ${className}`}>
       {children}
     </Link>
   );

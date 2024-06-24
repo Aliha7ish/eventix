@@ -10,11 +10,19 @@
   gap: 0.8rem;
   color: rgba(154, 154, 154, 1);
   font-weight: 100;
-  padding: 1.6rem 0.8rem;
+  /* padding: 1.6rem 0; */
   border: 0.5px solid rgba(154, 154, 154, 0.3);
 
   cursor: pointer;
   transition: border-color 0.3s;
+}
+.eventHeader {
+  margin-bottom: auto;
+}
+.eventHeader .headerVirtualBadge {
+  font-size: clamp(12px, 0.8vw, 22px);
+  padding: 0.2vw 1.15vw;
+  margin-left: auto;
 }
 .eventItem:hover {
   border-color: #fff;
@@ -45,18 +53,22 @@ img {
   right: 0;
   background: linear-gradient(0deg, #191919 0%, rgba(0, 0, 0, 0) 100%);
 }
-p {
-  font-size: 1.4rem;
+.eventOuterOrgContainer {
+  width: 50%;
 }
 .eventOrgContainer {
   display: flex;
-  gap: 0.6rem;
-  align-items: center;
+  gap: 0.4vw;
+  align-items: self-end;
+  margin-bottom: 4px;
 }
 .eventName {
-  font-size: 2rem;
+  font-size: clamp(20px, 1.6vw, 30px);
   font-weight: 700;
   color: #fff;
+}
+.organizer {
+  font-size: clamp(16px, 1vw, 22px);
 }
 .eventName::first-letter {
   text-transform: capitalize;
@@ -65,5 +77,33 @@ p {
 .eventDateContainer {
   display: flex;
   align-items: center;
-  gap: 2rem;
+  gap: 0.8vw;
+}
+.eventDateContainer p {
+  font-size: clamp(16px, 1vw, 22px);
+}
+.eventFooter .eventBtn {
+  font-size: clamp(14px, 1.1vw, 25px);
+  padding: 0.4vw 1.4vw;
+}
+.eventFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+.eventHeader,
+.eventFooter {
+  padding: 0.8vw 1vw;
+}
+
+/* Above 1400px */
+@media screen and (min-width: 87.5em) {
+  .eventName {
+    font-size: clamp(20px, 1.6vw, 32px);
+    font-weight: 700;
+    color: #fff;
+  }
+  .organizer {
+    font-size: clamp(16px, 1.2vw, 24px);
+  }
 }

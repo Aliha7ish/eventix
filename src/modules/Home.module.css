@@ -27,7 +27,7 @@
   font-size: max(2rem, min(1.25vw, 3.9249999999999998rem));
   max-width: min(55ch, 90%);
   color: #9f9f9f;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 30px;
 }
 .btnsContainer {

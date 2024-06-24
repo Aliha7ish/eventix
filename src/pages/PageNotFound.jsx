@@ -13,7 +13,9 @@ export default function PageNotFound() {
         Sorry, the page you&#39;re searching for appears to be missing
       </p>
       <p className="">We&#39;re actively investigating the issue.</p>
-      <ButtonComp className="btn-gradient">back to home &rarr;</ButtonComp>
+      <ButtonComp link="/home" className="btn-gradient">
+        back to home &rarr;
+      </ButtonComp>
     </div>
   );
 }
