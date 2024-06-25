@@ -9,29 +9,32 @@ import Home from "./Home";
 import Events from "./Events";
 import EventixLogo from "../components/EventixLogo";
 import Browse from "./Browse";
+
 function Main() {
   return (
-    <div>
-      <EventixLogo />
+    <>
       <div>
-        <Home />
-        <About />
-        <Events />
+        <EventixLogo />
+        <div>
+          <Home />
+          <About />
+          <Events />
+        </div>
       </div>
-    </div>
-    // <div className="main-page">
-    //   <div className="nav-conatiner">
-    //     <NavigationPages />
-    //   </div>
-    //   <div className="main-page-container-inner">
-    //     <EventixLogo />
-    //     <div>
-    //       <Home />
-    //       <About />
-    //       <Events />
-    //     </div>
-    //   </div>
-    // </div>
+      <div className="main-page">
+        <div className="nav-container">
+          <NavigationPages />
+        </div>
+        <div className="main-page-container-inner">
+          <EventixLogo />
+          <div>
+            <Home />
+            <About />
+            <Events />
+          </div>
+        </div>
+      </div>
+    </>
   );
 }
 
