@@ -51,7 +51,7 @@ function EventItem({ event, addButton = false, liveBadge = false }) {
                 <p className={`text-truncate ${styles.eventName}`}>
                   {event.title}
                 </p>
-                <p className={styles.organizer}>Osama</p>
+                <p className={styles.organizer}>{event.owner.name}</p>
               </div>
               <div className={styles.eventDateContainer}>
                 <p>{formattedDay}</p>
