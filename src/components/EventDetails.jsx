@@ -63,7 +63,7 @@ function EventDetails({ id }) {
                 }
               >
                 <PopUpWindow>
-                  <BookingTicketsForm />
+                  <BookingTicketsForm event_id={id} />
                 </PopUpWindow>
               </Popup>
             </footer>
