@@ -83,6 +83,7 @@ function EventsProvider({ children }) {
 
   const getEvent = async function (id) {
     try {
+      if (id === "category") return;
       const res = await fetch(`${BASE_URL}/api/events/${id}/`);
       if (!res.ok) {
         throw new Error("Failed to fetch event data");

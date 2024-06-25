@@ -18,6 +18,8 @@
 }
 .eventHeader {
   margin-bottom: auto;
+  display: flex;
+  align-items: center;
 }
 .eventHeader .headerVirtualBadge {
   font-size: clamp(12px, 0.8vw, 22px);

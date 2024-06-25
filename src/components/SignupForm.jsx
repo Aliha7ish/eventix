@@ -59,7 +59,10 @@ function SignupForm({ isError }) {
       email: "",
       firstName: "",
       lastName: "",
+      name: "",
     },
+    validateOnChange: false,
+    validateOnBlur: false,
     validate,
     onSubmit: async (values) => {
       console.log(values);
@@ -93,136 +96,291 @@ function SignupForm({ isError }) {
     <form onSubmit={formik.handleSubmit} className="form__signup">
       <div className="container-fluid ">
         <p>Create account</p>
-        <div className="row gy-3 justify-content-start">
-          <div className="input-label-container col-12 col-sm-6">
-            <label htmlFor="firstName">first name</label>
-            <input
-              id="firstName"
-              name="firstName"
-              className={`form-control ${
-                isError(formik.errors.firstName, formik.touched.firstName)
-                  ? "input-invalid"
-                  : isError(!formik.errors.firstName, formik.touched.firstName)
-                  ? "input-valid"
-                  : null
-              }`}
-              value={formik.values.firstName}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {isError(formik.errors.firstName, formik.touched.firstName) ? (
-              <InvalidInput>{formik.errors.firstName}</InvalidInput>
-            ) : (
-              ""
-            )}
-          </div>
-
-          <div className="input-label-container col-12 col-sm-6">
-            <label htmlFor="lastName">last name</label>
-            <input
-              id="lastName"
-              name="lastName"
-              className={`form-control ${
-                isError(formik.errors.lastName, formik.touched.lastName)
-                  ? "input-invalid"
-                  : isError(!formik.errors.lastName, formik.touched.lastName)
-                  ? "input-valid"
-                  : null
-              }`}
-              value={formik.values.lastName}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {isError(formik.errors.lastName, formik.touched.lastName) ? (
-              <InvalidInput>{formik.errors.lastName}</InvalidInput>
-            ) : (
-              ""
-            )}
-          </div>
-        </div>
-        <div className="input-label-container row gy-3">
-          <div className="col-12">
-            <label htmlFor="email">email address</label>
-            <input
-              type="email"
-              id="email"
-              name="email"
-              className={`form-control ${
-                isError(formik.errors.email, formik.touched.email)
-                  ? "input-invalid"
-                  : isError(!formik.errors.email, formik.touched.email)
-                  ? "input-valid"
-                  : null
-              }`}
-              value={formik.values.email}
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-            />
-            {isError(formik.errors.email, formik.touched.email) ? (
-              <InvalidInput>{formik.errors.email}</InvalidInput>
-            ) : (
-              ""
-            )}
-          </div>
-        </div>
-        <div className="row gy-3">
-          <PasswordField
-            id="password"
-            label="password"
-            value={formik.values.password}
-            handleChange={formik.handleChange}
-            handleBlur={formik.handleBlur}
-            col="sm-6"
-            className={
-              isError(formik.errors.password, formik.touched.password)
-                ? "input-invalid"
-                : isError(!formik.errors.password, formik.touched.password)
-                ? "input-valid"
-                : null
-            }
-            error={
-              isError(formik.errors.password, formik.touched.password) ? (
-                <InvalidInput>{formik.errors.password}</InvalidInput>
+        {/* <div>
+          <div className="row gy-3 justify-content-start">
+            <div className="input-label-container col-12 col-sm-10">
+              <label htmlFor="phoneNumber">phone no.</label>
+              <input
+                type="text"
+                id="phoneNumber"
+                name="phoneNumber"
+                className={`form-control ${
+                  isError(formik.errors.phoneNumber, formik.touched.phoneNumber)
+                    ? "input-invalid"
+                    : isError(
+                        !formik.errors.phoneNumber,
+                        formik.touched.phoneNumber
+                      )
+                    ? "input-valid"
+                    : null
+                }`}
+                value={formik.values.phoneNumber}
+                onChange={formik.handleChange}
+              />
+              {isError(
+                formik.errors.phoneNumber,
+                formik.touched.phoneNumber
+              ) ? (
+                <InvalidInput>{formik.errors.phoneNumber}</InvalidInput>
               ) : (
                 ""
-              )
-            }
-          />
-          <PasswordField
-            id="re_password"
-            label="confirm password"
-            value={formik.values.re_password}
-            handleChange={formik.handleChange}
-            // handleBlur={formik.handleBlur}
-            className={
-              formik.errors.re_password
-                ? "input-invalid"
-                : !formik.errors.re_password &&
-                  formik.values.re_password.length > 1
-                ? "input-valid"
-                : ""
-            }
-            col="sm-6"
-            error={
-              formik.errors.re_password ? (
-                <InvalidInput>{formik.errors.re_password}</InvalidInput>
+              )}
+            </div>
+            <div className="input-label-container col-12 col-sm-2">
+              <label htmlFor="gender">gender</label>
+              <select
+                value={formik.values.gender}
+                onChange={formik.handleChange}
+                className={`form-control select-option-center ${
+                  isError(formik.errors.gender, formik.touched.gender)
+                    ? "input-invalid"
+                    : isError(!formik.errors.gender, formik.touched.gender)
+                    ? "input-valid"
+                    : null
+                }`}
+              >
+                <option value="male" label="M" className="form-control" />
+                <option value="female" label="F" className="form-control" />
+              </select>
+              {isError(formik.errors.gender, formik.touched.gender) ? (
+                <InvalidInput>{formik.errors.gender}</InvalidInput>
               ) : (
                 ""
-              )
-            }
-          />
+              )}
+            </div>
+            <div className="row gy-3 justify-content-start">
+              <div className="input-label-container col-12 col-sm-6">
+                <label htmlFor="profession">professsion</label>
+                <input
+                  type="text"
+                  id="profession"
+                  name="profession"
+                  className={`form-control ${
+                    isError(formik.errors.profession, formik.touched.profession)
+                      ? "input-invalid"
+                      : isError(
+                          !formik.errors.profession,
+                          formik.touched.profession
+                        )
+                      ? "input-valid"
+                      : null
+                  }`}
+                  value={formik.values.profession}
+                  onChange={formik.handleChange}
+                />
+                {isError(
+                  formik.errors.profession,
+                  formik.touched.profession
+                ) ? (
+                  <InvalidInput>{formik.errors.profession}</InvalidInput>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="input-label-container col-12 col-sm-6">
+                <label htmlFor="salary">salary</label>
+                <input
+                  type="text"
+                  id="salary"
+                  name="salary"
+                  className={`form-control ${
+                    isError(formik.errors.salary, formik.touched.salary)
+                      ? "input-invalid"
+                      : isError(!formik.errors.salary, formik.touched.salary)
+                      ? "input-valid"
+                      : null
+                  }`}
+                  value={formik.values.salary}
+                  onChange={formik.handleChange}
+                />
+                {isError(formik.errors.salary, formik.touched.salary) ? (
+                  <InvalidInput>{formik.errors.salary}</InvalidInput>
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
+            <div className="row gy-3 justify-content-start">
+              <div className="input-label-container col-12 col-sm-6">
+                <label htmlFor="address">address</label>
+                <input
+                  type="text"
+                  id="address"
+                  name="address"
+                  className={`form-control ${
+                    isError(formik.errors.address, formik.touched.address)
+                      ? "input-invalid"
+                      : isError(!formik.errors.address, formik.touched.address)
+                      ? "input-valid"
+                      : null
+                  }`}
+                  value={formik.values.address}
+                  onChange={formik.handleChange}
+                />
+                {isError(formik.errors.address, formik.touched.address) ? (
+                  <InvalidInput>{formik.errors.address}</InvalidInput>
+                ) : (
+                  ""
+                )}
+              </div>
+              <div className="input-label-container col-12 col-sm-6">
+                <label htmlFor="interests">field of interests</label>
+                <input
+                  type="text"
+                  id="interests"
+                  name="interests"
+                  className={`form-control ${
+                    isError(formik.errors.interests, formik.touched.interests)
+                      ? "input-invalid"
+                      : isError(
+                          !formik.errors.interests,
+                          formik.touched.interests
+                        )
+                      ? "input-valid"
+                      : null
+                  }`}
+                  value={formik.values.interests}
+                  onChange={formik.handleChange}
+                />
+                {isError(formik.errors.interests, formik.touched.interests) ? (
+                  <InvalidInput>{formik.errors.interests}</InvalidInput>
+                ) : (
+                  ""
+                )}
+              </div>
+            </div>
+          </div>
+        </div> */}
+        <div>
+          <div className="row gy-3 justify-content-start">
+            <div className="input-label-container col-12 col-sm-6">
+              <label htmlFor="firstName">first name</label>
+              <input
+                id="firstName"
+                name="firstName"
+                className={`form-control ${
+                  isError(formik.errors.firstName, formik.touched.firstName)
+                    ? "input-invalid"
+                    : isError(
+                        !formik.errors.firstName,
+                        formik.touched.firstName
+                      )
+                    ? "input-valid"
+                    : null
+                }`}
+                value={formik.values.firstName}
+                onChange={formik.handleChange}
+              />
+              {isError(formik.errors.firstName, formik.touched.firstName) ? (
+                <InvalidInput>{formik.errors.firstName}</InvalidInput>
+              ) : (
+                ""
+              )}
+            </div>
 
-          <p style={{ marginTop: "6px", fontSize: "10px" }}>
-            Use or more 8 characters with a mix of letters, numbers and symbols
-          </p>
+            <div className="input-label-container col-12 col-sm-6">
+              <label htmlFor="lastName">last name</label>
+              <input
+                id="lastName"
+                name="lastName"
+                className={`form-control ${
+                  isError(formik.errors.lastName, formik.touched.lastName)
+                    ? "input-invalid"
+                    : isError(!formik.errors.lastName, formik.touched.lastName)
+                    ? "input-valid"
+                    : null
+                }`}
+                value={formik.values.lastName}
+                onChange={formik.handleChange}
+              />
+              {isError(formik.errors.lastName, formik.touched.lastName) ? (
+                <InvalidInput>{formik.errors.lastName}</InvalidInput>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+          <div className="input-label-container row gy-3">
+            <div className="col-12">
+              <label htmlFor="email">email address</label>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                className={`form-control ${
+                  isError(formik.errors.email, formik.touched.email)
+                    ? "input-invalid"
+                    : isError(!formik.errors.email, formik.touched.email)
+                    ? "input-valid"
+                    : null
+                }`}
+                value={formik.values.email}
+                onChange={formik.handleChange}
+              />
+              {isError(formik.errors.email, formik.touched.email) ? (
+                <InvalidInput>{formik.errors.email}</InvalidInput>
+              ) : (
+                ""
+              )}
+            </div>
+          </div>
+          <div className="row gy-3">
+            <PasswordField
+              id="password"
+              label="password"
+              value={formik.values.password}
+              handleChange={formik.handleChange}
+              col="sm-6"
+              className={
+                isError(formik.errors.password, formik.touched.password)
+                  ? "input-invalid"
+                  : isError(!formik.errors.password, formik.touched.password)
+                  ? "input-valid"
+                  : null
+              }
+              error={
+                isError(formik.errors.password, formik.touched.password) ? (
+                  <InvalidInput>{formik.errors.password}</InvalidInput>
+                ) : (
+                  ""
+                )
+              }
+            />
+            <PasswordField
+              id="re_password"
+              label="confirm password"
+              value={formik.values.re_password}
+              handleChange={formik.handleChange}
+              className={
+                formik.errors.re_password
+                  ? "input-invalid"
+                  : !formik.errors.re_password &&
+                    formik.values.re_password.length > 1
+                  ? "input-valid"
+                  : ""
+              }
+              col="sm-6"
+              error={
+                formik.errors.re_password ? (
+                  <InvalidInput>{formik.errors.re_password}</InvalidInput>
+                ) : (
+                  ""
+                )
+              }
+            />
+
+            <p style={{ marginTop: "6px", fontSize: "10px" }}>
+              Use or more 8 characters with a mix of letters, numbers and
+              symbols
+            </p>
+          </div>
         </div>
-
         <button
           className="btn btn-gradient"
           style={{ margin: "0 auto" }}
           type="submit"
         >
-          Sign Up
+          Next
         </button>
         <SeparatorLine />
         <SingleSignonButtons />

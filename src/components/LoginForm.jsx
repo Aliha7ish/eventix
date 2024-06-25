@@ -1,6 +1,6 @@
 import { useFormik } from "formik";
 // import InvalidInput from "./InvalidInput";
-import { useNavigate } from 'react-router-dom';
+import { useNavigate } from "react-router-dom";
 import SeparatorLine from "./SeparatorLine";
 import SingleSignonButtons from "./SingleSignonButtons";
 import { Link } from "react-router-dom";
@@ -33,23 +33,25 @@ function LoginForm() {
     validate,
     onSubmit: async (values) => {
       try {
-        const response = await fetch("http://127.0.0.1:8000/api/auth/jwt/create", {
+        const response = await fetch(
+          "http://127.0.0.1:8000/api/auth/jwt/create",
+          {
             method: "POST",
             headers: {
               "Content-Type": "application/json",
             },
             body: JSON.stringify(values),
-          });
+          }
+        );
 
-          const data =  await response.json();
-          const accessToken = data.access;
+        const data = await response.json();
+        const accessToken = data.access;
 
-          localStorage.setItem('accessToken', accessToken);
-          console.log("Login successful");
-          navigate('/home');
-          
-          } catch (error) {
-            console.error(error.message);
+        localStorage.setItem("accessToken", accessToken);
+        console.log(data);
+        navigate("/home");
+      } catch (error) {
+        console.error(error.message);
       }
     },
   });

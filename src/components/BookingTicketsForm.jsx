@@ -7,6 +7,7 @@ import ButtonComp from "./ButtonComp";
 import PopUpWindow from "./PopUpWindow";
 import { useState } from "react";
 function BookingTicketsForm() {
+  console.log("hello");
   const [submissionStatus, setSubmissionStatus] = useState(null);
   const [formData, setFormData] = useState({
     firstName: "",
@@ -165,136 +166,134 @@ function BookingTicketsForm() {
     }
   };
   return (
-    <PopUpWindow>
-      <form
-        onSubmit={handleSubmit}
-        className={`${styles.form} container-fluid px-md-5 px-3`}
-      >
-        <div className="row">
-          <p className={`${styles.formHeader} col-12`}>Book your ticket</p>
-          <div className={`${styles.personalInfoSide} col-6`}>
-            <p>Personal info</p>
-            <article className="row">
-              <div className="col-12 col-md-7 col-sm-9">
-                <label htmlFor="firstName">first name</label>
-                <input
-                  type="text"
-                  id="first-name"
-                  className={`form-control ${styles.bookingInput}`}
-                  name="firstName"
-                  value={formData.firstName}
-                  onChange={handleChange}
-                />
-                {errors.firstName && <span>{errors.firstName}</span>}
-              </div>
-              <div className="col-12 col-md-7 col-sm-9">
-                <label htmlFor="lastName">last name</label>
-                <input
-                  id="last-name"
-                  className={`form-control ${styles.bookingInput}`}
-                  type="text"
-                  name="lastName"
-                  value={formData.lastName}
-                  onChange={handleChange}
-                />
-                {errors.lastName && <span>{errors.lastName}</span>}
-              </div>
-            </article>
-          </div>
-          <div className={`${styles.billingInfoSide} col-6`}>
-            <p>billing info</p>
-            <article className="row">
-              <div className={`${styles.cardNoContainer} col-12`}>
-                <label htmlFor="card-number">card no.</label>
-                <div className={styles.cardNoInputs}>
-                  <input
-                    id="card-number"
-                    className={`form-control ${styles.bookingInput}`}
-                    type="text"
-                    minLength={4}
-                    maxLength={4}
-                    name="creditCardNo1"
-                    value={formData.creditCardNo1}
-                    onChange={handleChange}
-                  />
-                  <input
-                    id="card-number"
-                    className={`form-control ${styles.bookingInput}`}
-                    type="text"
-                    name="creditCardNo2"
-                    value={formData.creditCardNo2}
-                    onChange={handleChange}
-                    minLength={4}
-                    maxLength={4}
-                  />
-                  <input
-                    id="card-number"
-                    className={`form-control ${styles.bookingInput}`}
-                    type="text"
-                    name="creditCardNo3"
-                    value={formData.creditCardNo3}
-                    onChange={handleChange}
-                    minLength={4}
-                    maxLength={4}
-                  />
-                  <input
-                    id="card-number"
-                    className={`form-control ${styles.bookingInput}`}
-                    type="text"
-                    name="creditCardNo4"
-                    value={formData.creditCardNo4}
-                    onChange={handleChange}
-                    minLength={4}
-                    maxLength={4}
-                  />
-                  {/* {errors.creditCard && <span>{errors.creditCard}</span>} */}
-                </div>
-              </div>
-              <div className={`${styles.billingLastInputsContainer} col-12`}>
-                <div className="row justify-content-md-between">
-                  <div className="col-md-4 col-12">
-                    <label htmlFor="expirationDate">exp date</label>
-                    <input
-                      type="month"
-                      className={`form-control ${styles.bookingInput}`}
-                      name="expirationDate"
-                      id="exp-date"
-                      value={formData.expirationDate}
-                      onChange={handleChange}
-                    />
-                    {errors.expirationDate && (
-                      <span>{errors.expirationDate}</span>
-                    )}
-                  </div>
-                  <div className="col-md-4 col-12">
-                    <label htmlFor="cvv-number">CVV</label>
-                    <input
-                      type="text"
-                      className={`form-control ${styles.bookingInput}`}
-                      id="cvv-number"
-                      name="cvv"
-                      value={formData.cvv}
-                      onChange={handleChange}
-                    />
-                    {errors.cvv && <span>{errors.cvv}</span>}
-                  </div>
-                </div>
-              </div>
-            </article>
-          </div>
-          <div
-            className={`${styles.btnContainer} d-flex justify-content-center justify-content-md-end`}
-          >
-            <button
-              type="submit"
-              className={`btn btn-gradient ${styles.bookingFormBtn}`}
-            >
-              Confirm
-            </button>
-          </div>
+    <form
+      onSubmit={handleSubmit}
+      className={`${styles.form} container-fluid px-md-5 px-3`}
+    >
+      <div className="row">
+        <p className={`${styles.formHeader} col-12`}>Book your ticket</p>
+        <div className={`${styles.personalInfoSide} col-6`}>
+          <p>Personal info</p>
+          <article className="row">
+            <div className="col-12 col-md-7 col-sm-9">
+              <label htmlFor="firstName">first name</label>
+              <input
+                type="text"
+                id="first-name"
+                className={`form-control ${styles.bookingInput}`}
+                name="firstName"
+                value={formData.firstName}
+                onChange={handleChange}
+              />
+              {errors.firstName && <span>{errors.firstName}</span>}
+            </div>
+            <div className="col-12 col-md-7 col-sm-9">
+              <label htmlFor="lastName">last name</label>
+              <input
+                id="last-name"
+                className={`form-control ${styles.bookingInput}`}
+                type="text"
+                name="lastName"
+                value={formData.lastName}
+                onChange={handleChange}
+              />
+              {errors.lastName && <span>{errors.lastName}</span>}
+            </div>
+          </article>
         </div>
-      </form>
-    </PopUpWindow>
+        <div className={`${styles.billingInfoSide} col-6`}>
+          <p>billing info</p>
+          <article className="row">
+            <div className={`${styles.cardNoContainer} col-12`}>
+              <label htmlFor="card-number">card no.</label>
+              <div className={styles.cardNoInputs}>
+                <input
+                  id="card-number"
+                  className={`form-control ${styles.bookingInput}`}
+                  type="text"
+                  minLength={4}
+                  maxLength={4}
+                  name="creditCardNo1"
+                  value={formData.creditCardNo1}
+                  onChange={handleChange}
+                />
+                <input
+                  id="card-number"
+                  className={`form-control ${styles.bookingInput}`}
+                  type="text"
+                  name="creditCardNo2"
+                  value={formData.creditCardNo2}
+                  onChange={handleChange}
+                  minLength={4}
+                  maxLength={4}
+                />
+                <input
+                  id="card-number"
+                  className={`form-control ${styles.bookingInput}`}
+                  type="text"
+                  name="creditCardNo3"
+                  value={formData.creditCardNo3}
+                  onChange={handleChange}
+                  minLength={4}
+                  maxLength={4}
+                />
+                <input
+                  id="card-number"
+                  className={`form-control ${styles.bookingInput}`}
+                  type="text"
+                  name="creditCardNo4"
+                  value={formData.creditCardNo4}
+                  onChange={handleChange}
+                  minLength={4}
+                  maxLength={4}
+                />
+                {/* {errors.creditCard && <span>{errors.creditCard}</span>} */}
+              </div>
+            </div>
+            <div className={`${styles.billingLastInputsContainer} col-12`}>
+              <div className="row justify-content-md-between">
+                <div className="col-md-4 col-12">
+                  <label htmlFor="expirationDate">exp date</label>
+                  <input
+                    type="month"
+                    className={`form-control ${styles.bookingInput}`}
+                    name="expirationDate"
+                    id="exp-date"
+                    value={formData.expirationDate}
+                    onChange={handleChange}
+                  />
+                  {errors.expirationDate && (
+                    <span>{errors.expirationDate}</span>
+                  )}
+                </div>
+                <div className="col-md-4 col-12">
+                  <label htmlFor="cvv-number">CVV</label>
+                  <input
+                    type="text"
+                    className={`form-control ${styles.bookingInput}`}
+                    id="cvv-number"
+                    name="cvv"
+                    value={formData.cvv}
+                    onChange={handleChange}
+                  />
+                  {errors.cvv && <span>{errors.cvv}</span>}
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <div
+          className={`${styles.btnContainer} d-flex justify-content-center justify-content-md-end`}
+        >
+          <button
+            type="submit"
+            className={`btn btn-gradient ${styles.bookingFormBtn}`}
+          >
+            Confirm
+          </button>
+        </div>
+      </div>
+    </form>
   );
 }
 

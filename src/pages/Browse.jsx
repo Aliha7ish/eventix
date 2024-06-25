@@ -20,6 +20,7 @@ import PopUpWindow from "../components/PopUpWindow";
 
 // test popwindow
 import { useNavigate } from "react-router-dom";
+import EventixLogo from "../components/EventixLogo";
 // ----------------------------------------
 
 function Browse() {
@@ -59,8 +60,9 @@ function Browse() {
   }, []);
   return (
     <>
-      <section className="mg-top-lg">
-        <header className={styles.header}>
+      <section>
+        <EventixLogo />
+        <header className={`${styles.header} mg-top-lg`}>
           <h2 className={styles.heading2}>Browse</h2>
           <div className={styles.headerFlexContainerInner}>
             <EventixWordGradient className={styles.eventixWord} />
@@ -89,7 +91,7 @@ function Browse() {
         {/* For test pop up window */}
 
         {/* ------------------------------ */}
-        <Outlet />
+        {/* <Outlet /> */}
       </section>
     </>
   );
