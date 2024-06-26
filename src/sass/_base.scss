@@ -178,6 +178,11 @@ input:-webkit-autofill:active {
 }
 .padding-left-lg-section {
   padding-left: 9rem;
+
+  // Below 450px
+  @media screen and (max-width: 34.375em) {
+    padding-left: 4rem;
+  }
 }
 .category-heading {
   font-size: clamp(18px, 1.6vw, 2.2rem);

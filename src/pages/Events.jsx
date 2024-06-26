@@ -37,7 +37,6 @@ export default function Events() {
     return result;
   };
 
-  // Step 3: Get 3 random events from the filtered list
   const randomUpcomingVirtualEvents = getRandomEvents(VirtualEvents, 4);
   const randomLiveVirtualEvents = getRandomEvents(VirtualEvents, 3);
   const randomRealTimeEvents = getRandomEvents(RealTimeEvents, 3);

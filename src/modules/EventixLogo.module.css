@@ -23,3 +23,18 @@
   display: inline-block;
   transform: translateX(-16px);
 }
+/* Below 450px */
+@media screen and (max-width: 34.375em) {
+  .logo {
+    left: 4rem;
+  }
+}
+/* Below 350px */
+@media screen and (max-width: 21.875em) {
+  .logo {
+    font-size: clamp(26px, 7rem, 82px);
+  }
+  .logo span:last-of-type {
+    transform: translateX(-13px);
+  }
+}
