@@ -13,7 +13,7 @@ export default function About() {
       className={`${styles.aboutSection} padding-left-lg-section `}
     >
       <div className={styles.content}>
-        <article>
+        <article className={styles.articleHeader}>
           <div className={styles.textContent}>
             <h2 className={styles["heading-2"]}>
               Immerse yourself in the moment with{" "}
@@ -41,7 +41,7 @@ export default function About() {
 
         <SeparatorLine />
 
-        <article>
+        <article className={styles.articleFooter}>
           <div className={styles.imageContent}>
             <div>
               <img src="src\images\robot-2.png" alt="futuristic robot" />
@@ -64,53 +64,6 @@ export default function About() {
           </div>
         </article>
       </div>
-      {/* <article className="row gx-5 justify-content-center">
-        <div className={`${styles.textContent} col-12 col-sm-7 col-md-8`}>
-          <h2 className={styles["heading-2"]}>
-            Immerse yourself in the moment with{" "}
-            <EventixOverlapWord
-              word="realtime"
-              className={styles["text-box"]}
-            />
-          </h2>
-          <p>
-            where physical gatherings come to life effortlessly. Seamlessly plan
-            and execute events, creating memorable experiences that transcend
-            the ordinary. Elevate every detail, ensuring your occasions are
-            nothing short of extraordinary.
-          </p>
-        </div>
-        <div className={`${styles.imageContent} col-6 col-md-4`}>
-          <div>
-            <img
-              src="src\images\Crowd-in-nightclub.png"
-              alt="Crowd in nightclub"
-            />
-          </div>
-        </div>
-      </article>
-
-      <SeparatorLine />
-
-      <article className="row gx-5 justify-content-center">
-        <div className={`${styles.imageContent} col-6 col-md-4`}>
-          <div>
-            <img src="src\images\robot-2.png" alt="futuristic robot" />
-          </div>
-        </div>
-        <div className={`${styles.textContent} col-12 col-md-8`}>
-          <h2>
-            Step into the future of event hosting with{" "}
-            <EventixOverlapWord word="virtual" className={styles["text-box"]} />
-          </h2>
-          <p>
-            where physical gatherings come to life effortlessly. Seamlessly plan
-            and execute events, creating memorable experiences that transcend
-            the ordinary. Elevate every detail, ensuring your occasions are
-            nothing short of extraordinary.
-          </p>
-        </div>
-      </article> */}
     </section>
   );
 }

@@ -100,7 +100,7 @@ export default function Events() {
           {/* ------------------------------------ */}
 
           <div className={styles.containerInner}>
-            <header>
+            <header className={styles.header}>
               <EventixOverlapWord
                 word="realtime"
                 className={styles.headerLogo}
@@ -123,6 +123,12 @@ export default function Events() {
                     scrollbar={true}
                     mousewheel={true}
                     modules={[FreeMode, Scrollbar, Mousewheel]}
+                    // breakpoints={{
+                    //   600: { slidesPerView: 3, direction: "horizontal" },
+                    //   875: { slidesPerView: 3.2 },
+                    //   1100: { slidesPerView: 3.4 },
+                    //   1400: { slidesPerView: 3.6 },
+                    // }}
                     className={styles.grid1xn}
                   >
                     {randomLiveVirtualEvents.map((event) => {

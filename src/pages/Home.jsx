@@ -4,6 +4,7 @@
 import styles from "../modules/Home.module.css";
 import ButtonComp from "../components/ButtonComp";
 import { Link } from "react-router-dom";
+import BluredFloatingSquare from "../components/BluredFloatingSquare";
 
 export default function Home() {
   return (
@@ -25,12 +26,17 @@ export default function Home() {
           </p>
           <div className={styles.btnsContainer}>
             <ButtonComp className="btn-gradient">Get started</ButtonComp>
-            <ButtonComp className="btn-transparent">Learn more</ButtonComp>
+            <ButtonComp link="/about" className="btn-transparent">
+              Learn more
+            </ButtonComp>
           </div>
           <div>
             Already have an account? <Link to="login">log in</Link>
           </div>
         </div>
+        <BluredFloatingSquare className={styles.box1} />
+        <BluredFloatingSquare className={styles.box2} />
+        <BluredFloatingSquare className={styles.box3} />
       </section>
     </>
   );

@@ -1,22 +1,19 @@
 .square {
-  width: 10rem;
-  height: 10rem;
+  width: 100px;
+  height: 100px;
   position: absolute;
-  top: 10rem;
-  left: 25rem;
+  z-index: -1;
   border-radius: 10px;
-  border: 1px;
-  z-index: 1;
   background: linear-gradient(
       0deg,
       rgba(33, 33, 33, 0.2),
       rgba(33, 33, 33, 0.2)
     ),
-    linear-gradient(68.95deg, #999999 0.53%, rgba(153, 153, 153, 0) 61.67%);
+    linear-gradient(68.95deg, #99999931 0.53%, rgba(153, 153, 153, 0) 61.67%);
   border: 1px solid;
   border-image-source: linear-gradient(
     68.95deg,
-    #999999 0.53%,
+    #999999fd 0.53%,
     rgba(153, 153, 153, 0) 61.67%
   );
 }

@@ -20,7 +20,7 @@
 }
 .containerGrid {
   display: grid;
-  grid-template-columns: 40% 1fr;
+  grid-template-columns: 0.6fr 1fr;
   gap: 3.5rem;
   padding-top: 2.8rem;
 }
@@ -38,4 +38,56 @@
 }
 .containerGrid .header::first-letter {
   text-transform: capitalize;
+}
+
+/* Above 1400px */
+@media screen and (min-width: 87.5em) {
+  .grid2x2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 38rem);
+    grid-template-rows: repeat(2, 18rem);
+    gap: 1rem;
+  }
+}
+/* Below 550px */
+@media screen and (max-width: 34.375em) {
+  .containerGrid {
+    grid-template-columns: 0.5fr;
+    justify-content: center;
+  }
+  .headerLogo {
+    font-size: clamp(2.8rem, 4.2vw, 4.2rem);
+  }
+  .header .btn.btn-gradient {
+  }
+}
+/* Below 450px */
+@media screen and (max-width: 34.375em) {
+  .btnsContainer {
+    display: flex;
+    gap: 1.6rem;
+    margin-top: 4.2rem;
+  }
+}
+/* Below 350px */
+@media screen and (max-width: 21.875em) {
+  .heading {
+    font-size: clamp(3rem, 3vw, 3.8rem);
+    max-width: min(25ch, 95%);
+  }
+  .container p {
+    font-size: clamp(15px, 1.1vw, 18px);
+  }
+  .btnsContainer {
+    display: flex;
+    gap: 1rem;
+    margin-top: 4.2rem;
+  }
+}
+/* Below 330px */
+@media screen and (max-width: 20.625em) {
+  .btnsContainer .btn-transparent,
+  .btnsContainer .btn-gradient {
+    padding: 6px 18px;
+  }
 }
